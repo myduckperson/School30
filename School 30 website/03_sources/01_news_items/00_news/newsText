@@ -1,0 +1,19 @@
+<h1> <!-- тут знаходиться заголовок-->
+З 8 листопада в 11-Б класі вступає в дію дистанційна форма навчання
+</h1>
+<h2> <!-- тут знаходяться теги-->
+#Дистанційне #Коронавірус
+</h2>
+<h3> <!-- тут знаходиться дата (та інше) -->
+дата: 05.11.2021; джерело: класний керівник 11-Б
+</h3>
+<!--Головний текст повинен (кожен параграф/абзац повинен починатися з <p> та закінчуватися з
+</p>-->
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente placeat ex unde cupiditate ipsam, explicabo veritatis minima sequi maxime reiciendis!</p>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, impedit delectus doloribus facilis magni beatae nobis voluptatibus totam alias nulla officiis ipsa esse dignissimos et doloremque odio dolorum reiciendis. Beatae veritatis ducimus totam nemo perspiciatis voluptatibus voluptas necessitatibus quasi similique.</p>
+
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit magnam quibusdam voluptas sunt quidem sequi ducimus culpa ipsam, commodi at.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto modi quos pariatur aliquam quibusdam, sequi maxime optio eum natus. Qui exercitationem quia facere vitae amet voluptates tempore, unde aliquid dolores. Impedit fugiat optio expedita facilis, tempore enim quas excepturi officiis suscipit voluptas modi voluptatibus nihil id dolorem tempora dolores eveniet sed porro consequuntur inventore at, sapiente delectus culpa repudiandae. Corporis in adipisci ducimus quidem unde. Consequatur nesciunt commodi doloremque minus quis tempora amet vero voluptatum praesentium nihil. Commodi similique explicabo ratione expedita nam accusamus alias accusantium error quibusdam provident enim, doloremque fuga labore eligendi obcaecati possimus nobis architecto officiis. Facere, voluptatem soluta totam qui nobis ab sequi corrupti maiores culpa fugiat aperiam distinctio omnis consectetur veniam doloribus? Officiis voluptatibus illo eos, quidem omnis nihil reprehenderit dolorem numquam earum voluptatem placeat aliquid consequatur. Sed vitae harum accusantium quam repellat? Eos quis laboriosam rerum aliquam dolor velit nesciunt dolorum enim magnam a, placeat unde dignissimos quibusdam alias illo tempore nulla temporibus, ad quae ratione voluptas. Cupiditate rem cumque sit molestias provident vel impedit ex hic temporibus nobis non placeat necessitatibus in doloribus consequuntur, ducimus voluptates ullam quibusdam veritatis itaque? Vitae modi magnam laboriosam placeat nulla, reprehenderit tenetur inventore rem ullam, aspernatur architecto!</p>
