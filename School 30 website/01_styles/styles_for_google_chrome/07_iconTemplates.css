@@ -1,0 +1,204 @@
+/* лупа */
+/* лупа */
+/* лупа */
+/* лупа */
+/* лупа */
+
+.submit_icon{
+    height: 50px;
+    width: 50px;
+    padding-top: 5px;
+    position: absolute;
+    top: 0px;
+    right: 60%;
+    display: inline-block;     
+}
+.glass_part{
+    transition: var(--transitionStedy);
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    /* background-color: var(--lightblue); */
+    border: 4px solid var(--lightblue);
+    border-radius: 100%;
+    position: relative;
+    top: 0px;
+    transform: scale(0.8);
+}
+.stick{
+    transition: var(--transitionStedy);
+    position: absolute;
+    height: 5px;
+    width: 20px;
+    background-color: var(--lightblue);
+    border-radius: 25%;
+    transform: rotate(45deg);
+    top: 28px;
+    left: 19px;
+}
+/* лупа */
+/* лупа */
+/* лупа */
+/* лупа */
+
+/* іконка плюс */
+/* іконка плюс */
+/* іконка плюс */
+/* іконка плюс */
+/* іконка плюс */
+.dad{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--blue);
+    border-radius: 25%;
+    font-size: 20px;
+    /* line-height: 16px; */
+    font-weight: bold;
+    background-color: transparent;
+}
+.h- ,.v-{
+    transition: var(--transitionStedy);
+    display: block;
+    position: absolute;
+    top: 18px;
+    /* transform: translate(0, -50%); */
+    height: 4px;
+    width: 16px;
+    background-color: var(--gray);
+}
+.v-{
+    transform: rotate(90deg);
+}
+.openLines{
+    transform: rotate(180deg);
+}
+/* іконка плюс */
+/* іконка плюс */
+/* іконка плюс */
+
+/* бургер іконка */
+/* бургер іконка */
+/* бургер іконка */
+/* бургер іконка */
+    .menu_btn_icon{
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+    }
+    .menu_btn_icon_part{
+        width: 20px;
+        height: 4px;
+        background-color: var(--lightblue);
+        transition: var(--transitionStedy);
+    }
+    .part0Exit{
+        position: absolute;
+        top: 45%;
+        /* transform: translate(0, -50%); */
+        transform: rotate(45deg) ;
+    }
+    .part1Exit{
+        position: absolute;
+        top: 45%;        
+        /* transform: translate(0, -50%); */
+        transform: rotate(135deg) ;
+
+    }
+    .part2{
+        position: relative;
+        top: 0px;
+    }
+    .part2Exit{
+        opacity: 0;
+        top: 50px;
+    }
+
+    .menu_btn_text{
+        display: none;
+
+    }
+/* бургер іконка */
+/* бургер іконка */
+/* бургер іконка */
+/* бургер іконка */
+/* бургер іконка */
+
+/* стрілка */
+/* стрілка */
+/* стрілка */
+/* стрілка */
+/* стрілка */
+.arrow_right_box{
+    height: 100px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: 30px;
+    overflow: hidden; 
+}
+.arrow_left_box{
+    height: 100px;
+    width: 50px;
+    margin-right: auto;
+    margin-left: 30px;
+    overflow: hidden; 
+}
+.arrow_right{
+    aspect-ratio: 1/1;
+    width: 140%;
+    transform: translate(-50%, 20%) rotate(45deg);
+    border-top: 2px solid var(--lightblue);
+    border-right: 2px solid var(--lightblue);
+}
+.arrow_left{
+    aspect-ratio: 1/1;
+    width: 140%;
+    transform: translate(20%, 20%) rotate(45deg);
+    border-bottom: 2px solid var(--lightblue);
+    border-left: 2px solid var(--lightblue);
+}
+/* стрілка */
+/* стрілка */
+/* стрілка */
+/* стрілка */
+/* стрілка */
+
+
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+.arrow_icon{
+    width: 30px;
+    aspect-ratio: 30/80;
+    /* margin: auto; */
+}
+.boxOfTheArrow{
+    width: 100%;
+    height: 100%;
+    padding-top: 63.33%;
+    overflow: hidden;
+}
+.theArrow{
+    width: 140%;
+    aspect-ratio: 1;
+    transform-origin: center;
+    transform: translate(-50%,0px) rotate(45deg);
+    border-right: 2px solid;
+    border-top: 2px solid;
+    border-color: var(--lightblue);
+}
+.documents .theArrow{
+    border-color: var(--darkblue);
+}
+
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */
+/* стрілка 2.0 */

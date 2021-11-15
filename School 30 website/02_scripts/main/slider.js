@@ -177,7 +177,7 @@ function next(e){
     const index = e.currentTarget.index;
     console.log( e.currentTarget);
     // const allSlides = document.querySelectorAll('.slide_container').length;
-    const current = document.querySelectorAll('.currentID')[index-1];
+    const current = document.querySelectorAll('.currentID')[index];
     console.log(current)
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
     const nextS = current.nextElementSibling;
@@ -214,6 +214,9 @@ function next(e){
         // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!!       
         slideIteration++;
     }
+    if(index == 0){
+        dotsGo(slideIteration);
+    }
     // dotsGo(slideIteration);
 }
 
@@ -222,7 +225,7 @@ function prev(e){
     const allSlides = e.currentTarget.previousElementSibling.children;
     const index = e.currentTarget.index;
     // const allSlides = document.querySelectorAll('.slide_container').length;
-    const current = document.querySelectorAll('.currentID')[index];
+    const current = document.querySelectorAll('.currentID')[index-1];
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
     const nextS = current.nextElementSibling;
     const prevS = current.previousElementSibling;
@@ -255,7 +258,9 @@ function prev(e){
         // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!! 
         slideIteration--;      
     }
-    dotsGo(slideIteration);
+    if(index == 0){
+        dotsGo(slideIteration);
+    }
 }
 
 

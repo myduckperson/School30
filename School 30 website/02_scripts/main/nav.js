@@ -68,7 +68,6 @@ function mainCall(e){
         setTimeout(function(){
             menu.style.right = "0px";
             menuB.style.opacity = 0.6;}, 0);
-            // MAIGHT BE ERROR HERE
     }else{
         for(i=0; i<iconP.length; i++){
             iconP[i].classList.remove(`part${i}Exit`)

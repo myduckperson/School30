@@ -70,14 +70,14 @@ button{
     background-color: var(--black);
     border-color: var(--darkblue);
 }
-
+/* 
 input{
     appearance: none;
     background-color: var(--gray);
     transition: 0.5s;
     padding: 10px;    
     outline: none;
-}
+} */
 .input{
     border: 4px solid var(--lightblue);
 }

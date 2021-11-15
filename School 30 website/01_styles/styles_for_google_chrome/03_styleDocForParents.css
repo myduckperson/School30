@@ -198,61 +198,6 @@
 
 
 
-/* arrow */
-.arrow_icon{
-    width: 30px;
-    aspect-ratio: 30/80;
-    /* margin: auto; */
-}
-.boxOfTheArrow{
-    width: 100%;
-    height: 100%;
-    padding-top: 63.33%;
-    overflow: hidden;
-}
-.theArrow{
-    width: 140%;
-    aspect-ratio: 1;
-    transform-origin: center;
-    transform: translate(-50%,0px) rotate(45deg);
-    border-right: 2px solid var(--darkblue);
-    border-top: 2px solid var(--darkblue);
-}
-
-@media only screen and (max-width:750px){
-    .unite0_content_D{
-        flex-direction: column-reverse;
-        height: initial;
-        min-height: 700px;
-    }
-    .unite0_main_content{
-        width: 100%;
-        height: 300px;
-        flex: 2;
-    }
-    .img0_container{
-        width: 100%;
-        /* flex: 1 1 300px; */
-        height: 300px;
-    }
-    .unite1_content_D{
-        flex-direction: column;
-        height: initial;
-        min-height: 700px;
-    }
-    .unite1_main_content{
-        width: 100%;
-        height: 300px;
-        flex: 2;
-    }
-    .img1_container{
-        width: 100%;
-        /* flex: 1 1 300px; */
-        height: 300px;
-    }
-    .img1_container>img{
-    }
-}
 
 
 
