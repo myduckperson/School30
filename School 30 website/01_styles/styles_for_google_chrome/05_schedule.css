@@ -92,12 +92,18 @@
 }
 .scheduleContent>li{
     /* margin-bottom: 50px; */
+    transition: var(--transitionStedy);
+    display: none;
+    /* opacity: 0; */
     width: 100%;
     overflow-x: auto;
+    /* border: 2px solid var(--black); */
 }
 .scheduleContent>li>table{
     /* width: ; */
     /* padding: 0px 5%; */
+    transition: var(--transitionStedy);
+    opacity: 0;
     border-collapse: collapse;
     width: 100%;
     min-width: 600px;
@@ -110,8 +116,12 @@
     color: var(--darkblue);
     font-size: 20px;
 }
-.scheduleContent>li>table>thead>tr:nth-child(1){
+.scheduleContent>li>table>thead>tr:first-child{
     border-bottom: 2px solid var(--darkblue);
+    /* background-color: var(--gray); */
+}
+.scheduleContent>li>table>thead>tr:first-child>th{
+    background-color: var(--gray);
 }
 .scheduleContent>li>table td{
     padding: 10px 5px;

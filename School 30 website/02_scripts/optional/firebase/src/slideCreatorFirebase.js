@@ -29,10 +29,8 @@ const listIntroSliderRef = ref(storage, 'gs://progress-7027e.appspot.com/02_main
 const sliderIntro = document.querySelector(".slider_content");
 listAll(listIntroSliderRef)
 .then((res) => {
-  console.log("KaBO?")
   res.items.forEach((itemRef, pointer) => {
     // All the items under listRef.
-  console.log("KaBO?")
   // console.log(itemRef);
         getDownloadURL(ref(storage, itemRef.fullPath))
         .then( url =>{
@@ -42,10 +40,12 @@ listAll(listIntroSliderRef)
             // const imgInBox = box.appendChild(imgN);
             box.appendChild(imgN);
             imgN.setAttribute("src", url);
+            console.log("pointer "+pointer+" fired")
             if(pointer == 0){
+              // console.log(newsItem.prepend(box))
               // console.log(pointer)
                 box.className = "currentID";
-                newsItem.prepend(box);
+                sliderIntro.prepend(box);
             }else{
                 sliderIntro.appendChild(box);
             }

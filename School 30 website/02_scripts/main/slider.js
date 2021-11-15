@@ -215,7 +215,7 @@ function next(e){
         slideIteration++;
     }
     if(index == 0){
-        dotsGo(slideIteration);
+        // dotsGo(slideIteration);
     }
     // dotsGo(slideIteration);
 }
@@ -259,7 +259,7 @@ function prev(e){
         slideIteration--;      
     }
     if(index == 0){
-        dotsGo(slideIteration);
+        // dotsGo(slideIteration);
     }
 }
 

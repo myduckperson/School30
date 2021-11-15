@@ -107,6 +107,9 @@ input{
     position: relative;
     /* left: -100%;  */
 }
+.slider_content>div{
+    display: none;
+}
 .slide_container>img{
     height: 100%;
     width: 100%;
