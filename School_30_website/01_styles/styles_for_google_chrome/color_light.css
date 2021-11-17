@@ -1,0 +1,16 @@
+:root{
+
+    --black: rgba(197,198,200);
+    --darkblue: rgb(255, 255, 255);
+    --gray: rgb(42, 56, 56);
+    --lightblue: rgb(55, 138, 132);
+    --lightTextBlue: rgb(93, 95, 97);
+    --blue: rgba(70,162,159);
+    --lightdarkblue: rgb(225, 227, 230);
+    --gold: rgb(255, 230, 0);
+    --lightTextBlue: rgb(89, 201, 193);
+    --transitionFast: 0.3s;
+    --transitionStedy: 0.5s;
+    --transitionSlow: 1s;
+        /*https://visme.co/blog/website-color-schemes/ 12 Striking and Simple*/
+}

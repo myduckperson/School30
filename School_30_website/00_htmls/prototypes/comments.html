@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.0/firebase-ui-auth.css" />
+    
+<!-- 
+    <link rel="stylesheet" href="style0.css">
+    <link rel="stylesheet" href="style1.css"> -->
+    <link rel="stylesheet" href="../../01_styles/prototypes/comments.css">
+    <title>ЖЗОШ №30</title>
+    <!-- fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<button class="fixed" id="trustedP">sign<br>IN</button>
+<button class="fixed" id="untrustedP">sign<br>OUT</button>
+<!-- <img src="https://lh3.googleusercontent.com/a-/AOh14Gi9qOpJDk0WCakRazSDE6PVNirm1aeD8Y7zJjw2=s96-c"> -->
+    <!-- Комментарі -->
+    <!-- Комментарі -->
+
+    <section class="CM">
+        <div class="comments_wrapper">
+            <form class="usersData">
+                <div class="uName">
+                    <label>Прізвище Імʼя:</label>
+                    <input type="text" id="name">
+                    <div class="sticky"><img id="stickyImg"></div>
+                </div>
+                <div class="mail">
+                    <label>Електронна пошта:</label>
+                    <input type="text" id="email">
+                </div>
+                <div class="message">
+                    <label>Ваше повідомлення:</label>
+                    <div class="date">
+                        <label>Дата:</label>
+                        <input id="localDate" type="date" value="2020-11-08" disabled>
+                        <label>Час:</label>
+                        <input id="localTime" type="datetime" value="23:23:23" disabled>
+                    </div>
+                    <input type="text" id="message">
+                </div>
+                <!-- Зірки -->
+                <div class="stars">
+                    <div class="star star0 starID">
+                        <div class="starV0"></div>
+                        <div class="starV1"></div>
+                        <div class="starV2"></div>
+                        <div class="starV3"></div>
+                        <div class="starV4"></div>
+                    </div>
+                    <div class="star star1 starID">
+                        <div class="starV0"></div>
+                        <div class="starV1"></div>
+                        <div class="starV2"></div>
+                        <div class="starV3"></div>
+                        <div class="starV4"></div>
+                    </div>
+                    <div class="star star2 starID">
+                        <div class="starV0"></div>
+                        <div class="starV1"></div>
+                        <div class="starV2"></div>
+                        <div class="starV3"></div>
+                        <div class="starV4"></div>
+                    </div>
+                    <div class="star star3 starID">
+                        <div class="starV0"></div>
+                        <div class="starV1"></div>
+                        <div class="starV2"></div>
+                        <div class="starV3"></div>
+                        <div class="starV4"></div>
+                    </div>
+                    <div class="star star4 starID">
+                        <div class="starV0"></div>
+                        <div class="starV1"></div>
+                        <div class="starV2"></div>
+                        <div class="starV3"></div>
+                        <div class="starV4"></div>
+                    </div>
+                </div>
+                <button id="submitBtn" class="submitBtn" type="button">Відправити</button>
+            </form>
+            <div class="comments_content">
+                <h1>Коментарі:</h1>
+                <div class="wrapper_comments">
+                    <div class="comments_container" id="boxC">
+                        <template id="comTemp">
+                            <article>
+                                <div class="nonComment">
+                                    <div class="nameComment">
+                                        <h1 id="usersNameComment">Прізвище Імʼя</h1>
+                                    </div>
+                                    <!-- данні збережені в змінній -->
+                                    <div class="starsComment">
+        
+                                        <div class="starsCUnder">
+                                            <div class="star star0 starIDC">
+                                                <div class="starV0"></div>
+                                                <div class="starV1"></div>
+                                                <div class="starV2"></div>
+                                                <div class="starV3"></div>
+                                                <div class="starV4"></div>
+                                            </div>
+                                            <div class="star star1 starIDC">
+                                                <div class="starV0"></div>
+                                                <div class="starV1"></div>
+                                                <div class="starV2"></div>
+                                                <div class="starV3"></div>
+                                                <div class="starV4"></div>
+                                            </div>
+                                            <div class="star star2 starIDC">
+                                                <div class="starV0"></div>
+                                                <div class="starV1"></div>
+                                                <div class="starV2"></div>
+                                                <div class="starV3"></div>
+                                                <div class="starV4"></div>
+                                            </div>
+                                            <div class="star star3 starIDC">
+                                                <div class="starV0"></div>
+                                                <div class="starV1"></div>
+                                                <div class="starV2"></div>
+                                                <div class="starV3"></div>
+                                                <div class="starV4"></div>
+                                            </div>
+                                            <div class="star star4 starIDC">
+                                                <div class="starV0"></div>
+                                                <div class="starV1"></div>
+                                                <div class="starV2"></div>
+                                                <div class="starV3"></div>
+                                                <div class="starV4"></div>
+                                            </div>
+                                        </div>
+        
+                                    </div>
+                                    <div class="line"></div>
+                                    <div class="mailComment">
+                                        <h1 id="usersMailComment">duck@go</h1>
+                                    </div>
+                                    <div class="dateComment">
+                                        <input id="usersTimeComment" type="datetime" value="2002-10-02" disabled>
+                                        <input id="usersDateComment" type="date" value="2002-10-02" disabled>
+                                    </div>
+                                    <div class="line"></div>
+                                </div>
+        
+                                <div class="comment">
+                                    <h1>Повідомлення:</h1>
+                                    <p class="usersMessageComment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore saepe nam vitae exercitationem unde quasi!</p>
+                                </div>
+                            </article>
+                        </template>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+                    <!-- <article>
+                        <div class="nonComment">
+                            <div class="nameC">
+                                <h1 id="uNameC">Прізвище Імʼя</h1>
+                            </div>
+                            данні збережені в змінній
+                            <div class="starsC">
+
+                                <div class="starsCUnder">
+                                    <div class="star inactive star0">
+                                        <div class="starV0"></div>
+                                        <div class="starV1"></div>
+                                        <div class="starV2"></div>
+                                        <div class="starV3"></div>
+                                        <div class="starV4"></div>
+                                    </div>
+                                    <div class="star active star1">
+                                        <div class="starV0"></div>
+                                        <div class="starV1"></div>
+                                        <div class="starV2"></div>
+                                        <div class="starV3"></div>
+                                        <div class="starV4"></div>
+                                    </div>
+                                    <div class="star active star2">
+                                        <div class="starV0"></div>
+                                        <div class="starV1"></div>
+                                        <div class="starV2"></div>
+                                        <div class="starV3"></div>
+                                        <div class="starV4"></div>
+                                    </div>
+                                    <div class="star active star3">
+                                        <div class="starV0"></div>
+                                        <div class="starV1"></div>
+                                        <div class="starV2"></div>
+                                        <div class="starV3"></div>
+                                        <div class="starV4"></div>
+                                    </div>
+                                    <div class="star active star4">
+                                        <div class="starV0"></div>
+                                        <div class="starV1"></div>
+                                        <div class="starV2"></div>
+                                        <div class="starV3"></div>
+                                        <div class="starV4"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="line"></div>
+                            <div class="mailC">
+                                <h1 id="uMailC">duck@go</h1>
+                            </div>
+                            <div class="dateC">
+                                <input id="uDateC" type="date" value="2002-10-02" disabled> 
+                            </div>
+                            <div class="line"></div>
+                        </div>
+
+                        <div class="comment">
+                            <h1>Повідомлення:</h1>
+                            <p class="uMessageC">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore saepe nam vitae exercitationem unde quasi!</p>
+                        </div>
+                    </article> -->
+    <!-- /Комментарі -->
+    <!-- /Комментарі -->
+
+ 
+<!-- <div class="comments_">
+    <div class="mainCol">       
+
+        <h1 id="bruh">omga bruht</h1>
+        <label>Прізвище Ім'я</label>
+        <input type="text" id="author">
+
+            <label>e-mail:</label>
+            <input type="text" id="email">
+            
+            <label>message:</label>
+            <input type="text" id="comment">
+            <label>date</label>
+            <input type="date" id="date">
+            <button id="submit" >Написати</button>
+            <button id="show">show me the treasures</button>
+
+            <ul id="comments">
+                
+            </ul>
+        <iframe src="https://progress-7027e.web.app/"></iframe>
+    </div>
+    
+</div> -->
+
+
+
+<script type="module" src="../../02_scripts/prototypes/comments/comments.js"></script>
+
+</body>
+</html>

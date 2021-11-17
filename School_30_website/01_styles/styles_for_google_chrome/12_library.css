@@ -1,0 +1,125 @@
+.teachers{
+    min-height: 700px;
+    width: 90%;
+    margin: auto;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: row-reverse; */
+}
+.teachersWrapper{
+    border: 4px solid var(--blue);
+    /* border-top: none; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: row-reverse;
+}
+.titleTeachers{
+    width: 100%;
+    /* height: 60px; */
+    font-size: 30px;
+    padding-bottom: 5px;
+    /* border-bottom: 2px solid var(--lightblue); */
+    /* margin-bottom: 30px; */
+}
+/* бокова панель */
+/* бокова панель */
+/* бокова панель */
+/* бокова панель */
+
+.sidebarTeachersMenu{
+    flex: 1 0 400px;
+}
+.sidebarTeachersContent{
+
+}
+.sidebarTeachersContent>li:first-child{
+    /* border-top: 3px solid var(--lightblue); */
+    border-bottom: 3px solid var(--lightblue);
+}
+.sidebarTeachersContent>li{
+    border-bottom: 3px solid var(--lightblue);
+}
+.sidebarTeachersContent header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0px;
+}
+.sidebarTeachersContent>li>header>div{
+    transform: scale(150%);
+    margin: -10px 0px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sidebarTeachersContent>li>ul{
+    display: none;
+    overflow: hidden;
+    transition: var(--transitionStedy);
+    max-height: 0px;
+}
+.sidebarTeachersContent>li>ul>li{
+    border-top: 2px solid var(--blue);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* text-align: center; */
+}
+/* бокова панель */
+/* бокова панель */
+/* бокова панель */
+/* бокова панель */
+
+
+/* опис вчителів */
+/* опис вчителів */
+/* опис вчителів */
+/* опис вчителів */
+
+.libraryContent{
+    flex: 1 0 400px;
+    height: 500px;
+    overflow-y: auto;
+}
+.libraryContent>li{
+    display: none;
+    opacity: 0;
+    transition: var(--transitionStedy);
+}
+.libraryContent>li>div{
+    opacity: 0;
+    transition: var(--transitionStedy);
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+/* обгортка фотографії */
+.libraryContent>li>div>div:first-child{
+    max-width: 200px;
+    height: 100%;
+    object-fit: cover;
+}
+/* фотографія */
+.libraryContent img{
+    height: 100%;
+    margin: auto;
+    display: block;
+}
+/* обгортка тексту */
+.libraryContent>li>div>div:last-child{
+    /* height: 220px; */
+    /* width: 100%; */
+    overflow-y: auto;
+}
+.libraryContent p{
+    margin-top: 15px;
+    line-height: 20px;
+}
+/* опис вчителів */
+/* опис вчителів */
+/* опис вчителів */
+/* опис вчителів */

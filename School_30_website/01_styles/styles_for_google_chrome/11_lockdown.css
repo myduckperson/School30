@@ -1,0 +1,58 @@
+.lockdown{
+    width: 90%;
+    margin: auto;
+}
+.titleLockdown{
+    width: 100%;
+    /* height: 60px; */
+    font-size: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--lightblue);
+    margin-bottom: 20px;
+    /* text-align: center; */
+}
+.titleLockdown0{
+    width: 100%;
+    /* height: 60px; */
+    font-size: 26px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--blue);
+    margin-bottom: 10px;
+    text-align: center;
+}
+.lockdown>article{
+    padding-top: 30px;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.lockdown>article + article{
+    border-top: 2px solid var(--lightblue);
+}
+/* обгортка контенту артікла */
+.lockdown>article>div:last-child{
+    display: flex;
+    max-height: 300px;
+}
+/* обгортка тексту */
+.lockdown>article>div>div:last-child{
+    flex: 1 0 400px;
+    padding: 0px 30px;
+    max-height: 100%;
+    overflow-y: auto;
+}
+.lockdown>article p{
+    margin-top: 10px;
+    line-height: 22px;
+}
+/* обгортка зображення */
+.lockdown>article>div>div:first-child{
+    flex: 1 0 400px;
+    display: flex;
+    align-items: center;
+}
+.lockdown>article img{
+    width: 100%;
+    padding: 0px 30px;
+    max-height: 300px;
+    object-fit: contain;
+}
