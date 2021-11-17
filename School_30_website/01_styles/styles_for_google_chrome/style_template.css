@@ -44,6 +44,7 @@ h1{
 
 /* arrow */
 .arrow_icon{
+    /* position: absolute; */
     width: 30px;
     aspect-ratio: 30/80;
     /* margin: auto; */

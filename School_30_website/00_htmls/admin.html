@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheets" href="../01_styles/styles_for_google_chrome/09_comments.css">
+    <link rel="stylesheets" href="../01_styles/styles_for_google_chrome/color_dark.css">
+
+    <title>Admin</title>
+</head>
+<body>
+    <h1>Welcome admin</h1>
+    <section class="comments" id="comments">
+        <div class="info_title">
+            <h1>Зворотній зв'язок</h1>
+        </div>
+        <section class="CM">
+            <div class="comments_wrapper">
+                <!-- <form class="usersData">
+                    <div class="uName">
+                        <label>Прізвище Імʼя:</label>
+                        <input type="text" id="name">
+                        <div class="sticky"><img id="stickyImg"></div>
+                    </div>
+                    <div class="mail">
+                        <label>Електронна пошта:</label>
+                        <input type="text" id="email">
+                    </div>
+                    <div class="message">
+                        <label>Ваше повідомлення:</label>
+                        <div class="date">
+                            <label>Дата:</label>
+                            <input id="localDate" type="date" value="2020-11-08" disabled>
+                            <label>Час:</label>
+                            <input id="localTime" type="datetime" value="23:23:23" disabled>
+                        </div>
+                        <input type="text" id="message">
+                    </div>
+                    Зірки
+                    <div class="stars">
+                        <div class="star star0 starID">
+                            <div class="starV0"></div>
+                            <div class="starV1"></div>
+                            <div class="starV2"></div>
+                            <div class="starV3"></div>
+                            <div class="starV4"></div>
+                        </div>
+                        <div class="star star1 starID">
+                            <div class="starV0"></div>
+                            <div class="starV1"></div>
+                            <div class="starV2"></div>
+                            <div class="starV3"></div>
+                            <div class="starV4"></div>
+                        </div>
+                        <div class="star star2 starID">
+                            <div class="starV0"></div>
+                            <div class="starV1"></div>
+                            <div class="starV2"></div>
+                            <div class="starV3"></div>
+                            <div class="starV4"></div>
+                        </div>
+                        <div class="star star3 starID">
+                            <div class="starV0"></div>
+                            <div class="starV1"></div>
+                            <div class="starV2"></div>
+                            <div class="starV3"></div>
+                            <div class="starV4"></div>
+                        </div>
+                        <div class="star star4 starID">
+                            <div class="starV0"></div>
+                            <div class="starV1"></div>
+                            <div class="starV2"></div>
+                            <div class="starV3"></div>
+                            <div class="starV4"></div>
+                        </div>
+                    </div>
+                    <button id="submitBtn" class="submitBtn" type="button">Відправити</button>
+                </form> -->
+                <div class="comments_content">
+                    <h1>Коментарі користувачів</h1>
+                    <form>
+                        <label>Підтвердженні</label>
+                        <input type="radio" name="cm" id="approved">
+                        <label>Не підтвердженні</label>
+                        <input type="radio" name="cm" id="NaN_approved">
+                        <label>Усі</label>
+                        <input type="radio" name="cm" id="All">
+                        <input type="submit" id="chooseComments" value="Підтвердіть вибір">
+                    </form>
+                    <div class="wrapper_comments">
+                        <div class="comments_container" id="boxC">
+                            <template id="comTemp">
+                                <article>
+                                    <div class="nonComment">
+                                        <div class="nameComment">
+                                            <h1 id="usersNameComment">Прізвище Імʼя</h1>
+                                        </div>
+                                        <!-- данні збережені в змінній -->
+                                        <div class="starsComment">
+
+                                            <div class="starsCUnder">
+                                                <div class="star star0 starIDC">
+                                                    <div class="starV0"></div>
+                                                    <div class="starV1"></div>
+                                                    <div class="starV2"></div>
+                                                    <div class="starV3"></div>
+                                                    <div class="starV4"></div>
+                                                </div>
+                                                <div class="star star1 starIDC">
+                                                    <div class="starV0"></div>
+                                                    <div class="starV1"></div>
+                                                    <div class="starV2"></div>
+                                                    <div class="starV3"></div>
+                                                    <div class="starV4"></div>
+                                                </div>
+                                                <div class="star star2 starIDC">
+                                                    <div class="starV0"></div>
+                                                    <div class="starV1"></div>
+                                                    <div class="starV2"></div>
+                                                    <div class="starV3"></div>
+                                                    <div class="starV4"></div>
+                                                </div>
+                                                <div class="star star3 starIDC">
+                                                    <div class="starV0"></div>
+                                                    <div class="starV1"></div>
+                                                    <div class="starV2"></div>
+                                                    <div class="starV3"></div>
+                                                    <div class="starV4"></div>
+                                                </div>
+                                                <div class="star star4 starIDC">
+                                                    <div class="starV0"></div>
+                                                    <div class="starV1"></div>
+                                                    <div class="starV2"></div>
+                                                    <div class="starV3"></div>
+                                                    <div class="starV4"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="line"></div>
+                                        <div class="mailComment">
+                                            <h1 id="usersMailComment">duck@go</h1>
+                                        </div>
+                                        <div class="dateComment">
+                                            <input id="usersTimeComment" type="datetime" value="2002-10-02"
+                                                disabled>
+                                            <input id="usersDateComment" type="date" value="2002-10-02" disabled>
+                                        </div>
+                                        <div class="line"></div>
+                                    </div>
+
+                                    <div class="comment">
+                                        <h1>Повідомлення:</h1>
+                                        <p class="usersMessageComment">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Tempore saepe nam vitae exercitationem unde quasi!</p>
+                                    </div>
+                                </article>
+                            </template>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="../02_scripts/main/comments.js" type="module"></script>
+</body>
+</html>

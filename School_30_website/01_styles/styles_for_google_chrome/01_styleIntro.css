@@ -216,7 +216,7 @@ input{
     }
 }
 .nextInToLeft{
-    position: relative;
+    /* position: absolute; */
     top: 0px;
     animation-name: nextInToLeft;
     animation-fill-mode: forwards;
@@ -237,7 +237,7 @@ input{
     }
 }
 .prevInToRight{
-    position: relative;
+    /* position: absolute; */
     top: 0px;
     animation-name: prevInToRight;
     animation-fill-mode: forwards;

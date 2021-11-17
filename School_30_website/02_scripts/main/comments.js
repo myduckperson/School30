@@ -111,27 +111,33 @@ const provider = new GoogleAuthProvider();
 // дата та час
 // дата та час
 // дата та час
-setDateToInput();
-console.log("bruh")
-function setDateToInput(){
-  const dataHolder = document.querySelector("#localDate");
-  let yourDate = new Date()
-  // console.log(Timestamp.fromDate())
-  // дати в джаваскріпті це божевілля
-  // https://stackoverflow.com/questions/85116/display-date-time-in-users-locale-format-and-time-offset/23872920
-  // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd#comment58447831_29774197
-  const offset = yourDate.getTimezoneOffset();
-  // у виразі є 60000, бо offset повертає хвилини (помноживши це на 60 отримаємо години), а geTime повертає час в мілісекундах  
-  yourDate = new Date(yourDate.getTime() - (offset*60*1000));
-  dataHolder.value = yourDate.toISOString().substring(0,10);
-  // const today = new Date();
-  // const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  // const dataHolder = document.querySelector("#localDate");
-  // dataHolder.value = date;
-  // console.log(today)
+      const submitBtn = document.querySelector("#submitBtn");
+if(window.location.href == "https://myduckperson.github.io/School30/" && window.location.href == "localhost:5500"){
+      setDateToInput(); 
+      setTimeToInput();
+      setInterval(setTimeToInput, 1000);
+      submitBtn.addEventListener("click", send);
+      showIt();
 }
-setTimeToInput();
-setInterval(setTimeToInput, 1000);
+// console.log("bruh")
+function setDateToInput(){
+      const dataHolder = document.querySelector("#localDate");
+      let yourDate = new Date()
+      // console.log(Timestamp.fromDate())
+      // дати в джаваскріпті це божевілля
+      // https://stackoverflow.com/questions/85116/display-date-time-in-users-locale-format-and-time-offset/23872920
+      // https://stackoverflow.com/questions/23593052/format-javascript-date-as-yyyy-mm-dd#comment58447831_29774197
+      const offset = yourDate.getTimezoneOffset();
+      // у виразі є 60000, бо offset повертає хвилини (помноживши це на 60 отримаємо години), а geTime повертає час в мілісекундах  
+      yourDate = new Date(yourDate.getTime() - (offset*60*1000));
+      dataHolder.value = yourDate.toISOString().substring(0,10);
+      // const today = new Date();
+      // const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      // const dataHolder = document.querySelector("#localDate");
+      // dataHolder.value = date;
+      // console.log(today)
+}
+
 function setTimeToInput(){
   let yourDate = new Date()
   // дати в джаваскріпті це божевілля
@@ -192,8 +198,6 @@ function starClick(e){
 // комментарі
 
 
-const submitBtn = document.querySelector("#submitBtn");
-submitBtn.addEventListener("click", send);
 
 
 async function send(e){
@@ -226,7 +230,6 @@ async function send(e){
     }; 
   }
 
-showIt();
 let i = 0;
 async function showIt(){
   // const querySnapshot = await getDocs(collection(db, "comments"));
@@ -235,7 +238,7 @@ async function showIt(){
   // const docSnap = await getDoc(docRef);
   // console.log(docSnap.data());
   const q = query(collection(db, "comments"), orderBy("date", "asc"));
-  console.log(getDocs(q));
+  // console.log(getDocs(q));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
     if(doc.data().approve){
@@ -251,11 +254,11 @@ async function showIt(){
               // const uDateC = document.querySelectorAll("#usersDateComment");      
               if(uNameC[0] == undefined || uMailC[0] == undefined || uMessageC[0] == undefined/* || uDateC[0] == undefined */){
                 reject()
-                console.log("rejected");
+                // console.log("rejected");
               }else{
                 resolve(doc);
                 // console.log(uNameC.length)
-                console.log("resolved");
+                // console.log("resolved");
               }
           });
           createTemplate.then((doc) => {

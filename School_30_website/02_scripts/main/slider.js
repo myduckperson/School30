@@ -175,13 +175,13 @@ function next(e){
     // console.log(bm)
     // const allSlides = e.currentTarget.nextElementSibling.children;
     const index = e.currentTarget.index;
-    console.log( e.currentTarget);
+    // console.log( e.currentTarget);
     // const allSlides = document.querySelectorAll('.slide_container').length;
     // на випадок того, що не всі слайди завантаженні (проблема із-за опори на карент айді)
    
     const current = e.currentTarget.nextElementSibling.querySelector(".currentID");
 
-    console.log(current)
+    // console.log(current)
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
     const nextS = current.nextElementSibling;
     const prevS = current.previousElementSibling;
@@ -221,14 +221,17 @@ function next(e){
         // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!!       
         slideIteration++;
     }
-    if(index == 0){
+    if(current.parentElement.id == "special"){
         dotsGo(slideIteration);
+        // console.log("dots")
     }
+    // console.log("dots" + index)
 }
 
 // на клік кнопки "<" анімація зміни слайдів 
 function prev(e){
     const allSlides = e.currentTarget.previousElementSibling.children;
+    console.log(allSlides)
     const index = e.currentTarget.index;
     // const allSlides = document.querySelectorAll('.slide_container').length;
     const current = e.currentTarget.previousElementSibling.querySelector(".currentID");
@@ -257,7 +260,8 @@ function prev(e){
         lastC.classList.remove("currentOutToLeft");
         lastC.style.display = displayV; 
         setTimeout(function(){ lastC.classList.add("prevInToRight"); }, 0);
-        console.log()
+        // console.log(allSlides.length);
+        // console.log(slideIteration + "reseting point")
         slideIteration = allSlides.length-1;
     }else{
         prevS.style.zIndex = -1; 
@@ -267,10 +271,13 @@ function prev(e){
         prevS.style.display = displayV; 
         setTimeout(function(){ prevS.classList.add("prevInToRight"); }, 0);
         // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!! 
+        // console.log(slideIteration)
         slideIteration--;      
     }
-    if(index == 0){
-        dotsGo(slideIteration);
+    if(current.parentElement.id == "special"){
+        // console.log(allSlides.length);
+        dotsGo(slideIteration, allSlides.length);
+        // console.log("dots")
     }
     // dotsGo(slideIteration);
 }
@@ -278,12 +285,16 @@ function prev(e){
 
 // KNDAS - Keeping Needed Dots Active System, система утримання потрібний кнопок активними 
 
-function dotsGo(slideIteration){
+function dotsGo(slideIteration, slides){
+    // console.log(slideIteration)
+
     const dots = document.querySelectorAll('.dot');
     for(i=0; i < dots.length; i++){
         dots[i].classList.remove("active");
     }
+    // console.log(slideIteration +" who resets you")
     dots[slideIteration].classList.toggle("active");
+    // console.log(slideIteration)
         // if(dots[slideIteration+1] == undefined){
         //     dots[0].classList.remove("active");
         // }else{
@@ -302,7 +313,7 @@ function dotBtn(e){
     const dotIn = e.currentTarget.index;
     const current = e.currentTarget.parentElement.previousElementSibling.previousElementSibling.querySelector(".currentID");
     const slides = document.querySelector('.slider_content').children;
-    console.log(current);
+    // console.log(current);
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
 
     disableBtns();
@@ -370,8 +381,9 @@ function createTheDots(){
 
     // const dotsCT = document.querySelector('.dots');
     // const dot = document.createElement("div");
-    console.log("over Here")
+    // console.log("over Here")
     const allSl = document.querySelector('.slider_content').children;
+    // console.log(allSl.length)
     for(i=0; i < allSl.length; i++){
         const dotsCT = document.querySelector('.dots');
         const dot = document.createElement("div");

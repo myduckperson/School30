@@ -1,19 +1,25 @@
-.teachers{
-    min-height: 700px;
+.library{
+    /* min-height: 700px; */
     width: 90%;
     margin: auto;
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* flex-direction: row-reverse; */
 }
-.teachersWrapper{
+.library .arrow_icon{
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    transform: translate(0px, -50%) scale(50%);
+}
+.libraryWrapper{
     border: 4px solid var(--blue);
     /* border-top: none; */
     display: flex;
     /* flex-wrap: wrap; */
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
-.titleTeachers{
+.titleLibrary{
     width: 100%;
     /* height: 60px; */
     font-size: 30px;
@@ -26,42 +32,65 @@
 /* бокова панель */
 /* бокова панель */
 
-.sidebarTeachersMenu{
-    flex: 1 0 400px;
+.sidebarLibraryWrapper{
+    /* flex: 1 0 300px; */
+    position: relative;
 }
-.sidebarTeachersContent{
-
+.sidebarLibraryContent{
+    /* flex: 1 0 200px; */
 }
-.sidebarTeachersContent>li:first-child{
-    /* border-top: 3px solid var(--lightblue); */
-    border-bottom: 3px solid var(--lightblue);
-}
-.sidebarTeachersContent>li{
-    border-bottom: 3px solid var(--lightblue);
-}
-.sidebarTeachersContent header{
+.sidebarLibraryContent>div>li{
+    /* border-bottom: 3px solid var(--lightblue); */
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 15px 0px;
+    height: 50px;
 }
-.sidebarTeachersContent>li>header>div{
-    transform: scale(150%);
-    margin: -10px 0px;
-    height: 40px;
-    width: 40px;
+.sidebarLibraryContent>div>li:first-child{
+    /* border-top: 3px solid var(--lightblue); */
+}
+.sidebarLibraryContent header{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding: 15px 0px; */
     position: relative;
+    min-width: 200px;
+    /* border-bottom: 3px solid var(--lightblue); */
 }
-.sidebarTeachersContent>li>ul{
-    display: none;
-    overflow: hidden;
+.sidebarLibraryContent header>h1{
+    margin-left: -50px;
+}
+.sidebarLibraryContent>div>li>ol{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    /* display: none; */
+    /* overflow: hidden; */
     transition: var(--transitionStedy);
-    max-height: 0px;
+    /* max-height: 0px; */
+    /* max-height: 100%; */
+    height: 60px;
+    text-align: center;
+    min-width: 200px;
+    flex-grow: 1;
+    border-top: 2px solid var(--blue);
+    margin-top: 2px;
+    visibility: hidden;
+    opacity: 0;
 }
-.sidebarTeachersContent>li>ul>li{
+.sidebarLibraryContent>div>li:first-child>ol{
+    position: initial;
+}
+@media only screen and (min-width){
+    .sidebarLibraryContent header:hover ~ ol, .sidebarLibraryContent ol:hover{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+.sidebarLibraryContent>div>li>ol>li{
+    padding: 6px 0px;
+    border-bottom: 2px solid var(--blue);
+}
+.sidebarLibraryContent>li>ul>li{
     border-top: 2px solid var(--blue);
     padding: 10px 20px;
     display: flex;
@@ -81,7 +110,7 @@
 /* опис вчителів */
 
 .libraryContent{
-    flex: 1 0 400px;
+    flex: 4 0 400px;
     height: 500px;
     overflow-y: auto;
 }

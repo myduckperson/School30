@@ -1,7 +1,8 @@
 .schedule{
     /* testing */
-    min-height: 700px;
+    /* min-height: 700px; */
     width: 100%;
+    margin-bottom: 100px;
     padding: 0px 5%;
     /* testing */
     display: flex;

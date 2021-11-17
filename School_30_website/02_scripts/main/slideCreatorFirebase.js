@@ -42,11 +42,11 @@ listAll(listIntroSliderRef)
             imgN.setAttribute("src", url);
             if(pointer == 0){
               // console.log(pointer)
-              console.log("what happend?")
+              // console.log("what happend?")
                 box.className = "currentID";
                 box.setAttribute("style", "display: block;");
                 sliderIntro.prepend(box);
-            }if(pointer == res.items.length - 1){
+            }else if(pointer == res.items.length - 1){
               imgN.addEventListener("load", createTheDots);
               sliderIntro.appendChild(box);
               // console.log("something happend")
@@ -74,7 +74,7 @@ const listOfNews = document.querySelectorAll(".sliderNewsID");
     .then((res) => {
       var test = "0test"
       // console.log(typeof Number(test.substring(0,1)))
-      console.log("no error here")
+      // console.log("no error here")
       // дуже цікава річ, сортуємо референси по імені префікса (папки батька) файла
       res.prefixes.sort((a, b) => Number(a.name.substring(0,1) - b.name.substring(0,1))).forEach((folderRef, i) => {
         // console and sort
@@ -82,7 +82,7 @@ const listOfNews = document.querySelectorAll(".sliderNewsID");
       
       // res.prefixes.sort( compare(Number(a.name.substring(0,1)) , Number(b.name.substring(0,1))));
       
-        console.log(Number(folderRef.name.substring(0,1)));
+        // console.log(Number(folderRef.name.substring(0,1)));
         let newsItem = listOfNews[i];
         listAll(folderRef).then( res =>{
           // console.log(newsItem);

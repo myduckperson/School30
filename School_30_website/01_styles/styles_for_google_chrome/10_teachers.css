@@ -1,7 +1,8 @@
 .teachers{
-    min-height: 700px;
+    /* min-height: 700px; */
     width: 90%;
-    margin: auto;
+    margin: 30px auto;
+    
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* flex-direction: row-reverse; */
@@ -41,9 +42,9 @@
 }
 .sidebarTeachersContent header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    padding: 15px 0px;
+    padding: 15px 10px;
 }
 .sidebarTeachersContent>li>header>div{
     transform: scale(150%);
@@ -63,11 +64,17 @@
 }
 .sidebarTeachersContent>li>ul>li{
     border-top: 2px solid var(--blue);
-    padding: 10px 20px;
+    padding: 10px 50px 10px 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     /* text-align: center; */
+}
+
+/* прапорець Вибір вчителя*/
+.checkerTeacher{
+    height: 17px;
+    width: 17px;
 }
 /* бокова панель */
 /* бокова панель */
@@ -82,19 +89,25 @@
 
 .teachersContent{
     flex: 1 0 400px;
-    height: 500px;
-    overflow-y: auto;
+    height: 520px;
+    overflow-y: scroll;
+    /* background-image: url('https://firebasestorage.googleapis.com/v0/b/progress-7027e.appspot.com/o/03_teachers%2F_fonDark.PNG?alt=media&token=99d185ac-2f7e-4744-ad35-5cd15f6346bb'); */
+    
+ 
 }
+
 .teachersContent>li{
     display: none;
     opacity: 0;
     transition: var(--transitionStedy);
+ 
+    
 }
 .teachersContent>li>div{
     opacity: 0;
     transition: var(--transitionStedy);
     width: 90%;
-    margin: auto;
+    margin: 20px  auto;
     text-align: center;
 }
 /* обгортка фотографії */
@@ -110,14 +123,15 @@
 }
 /* обгортка тексту */
 .teachersContent>li>div>div:last-child{
-    height: 220px;
+    /* height: 220px; */
     width: 100%;
-    overflow-y: auto;
+    /* overflow-y: auto; */
 }
 .teachersContent p{
     margin-top: 15px;
     line-height: 20px;
 }
+
 /* опис вчителів */
 /* опис вчителів */
 /* опис вчителів */

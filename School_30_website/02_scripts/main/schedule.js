@@ -16,7 +16,7 @@ function showTable(e){
         tables[currentIndex].firstElementChild.style.opacity = 0;
         setTimeout( () => {tables[currentIndex].style.display = "none";}, spdStedy);
     }else{
-        tables[currentIndex].style.display = "initial";
+        tables[currentIndex].style.display = "block";
         setTimeout( () => {tables[currentIndex].firstElementChild.style.opacity = 1;}, 0)
    }
 

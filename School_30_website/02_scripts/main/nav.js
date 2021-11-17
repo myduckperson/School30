@@ -86,7 +86,7 @@ function show(event){
     // отримує індекс кнопки
     const e = event.currentTarget.index;
     // шукає масив дочірніх елементів в дочірному елементі кнопки (для анімації +/-)
-    const daughters = event.currentTarget.lastElementChild.firstElementChild.childNodes;
+    const daughters = event.currentTarget.lastElementChild.firstElementChild.children;
     // шукає настопного наступного дядька (брат батька)
     const subUl = event.currentTarget.nextElementSibling;
     console.log(daughters)
@@ -98,6 +98,7 @@ function show(event){
     if(subUl.style.display === "block"){
         // для анімації +/- знімає клас "optnLines" з смужок плюса
         for(i = 0; i<2; i++){
+            console.log(daughters)
             daughters[i].classList.remove("openLines");
         }
         // підменю зникає
@@ -106,6 +107,7 @@ function show(event){
     }else{
         // для анімації +/- додає клас "optnLines" смужокам плюса
         for(i = 0; i<2; i++){
+            console.log(daughters[i])
             daughters[i].classList.add("openLines");
         }
         // підменю з'являється
@@ -128,10 +130,13 @@ function setStyleDark() {
     console.log("DARK")
     document.getElementById("link_color_light").setAttribute("disabled","");
     document.getElementById("link_color_dark").removeAttribute("disabled");
+    document.getElementById("teachersContent").style.backgroundImage="http://30.zosh.zt.ua/wp-content/uploads/2018/09/IMG_20180901_092019.jpg";
 }
 
 function setStyleLight() {
     console.log("LIGHT")
     document.getElementById("link_color_dark").setAttribute("disabled","");
     document.getElementById("link_color_light").removeAttribute("disabled");
+   // document.getElementById("teachersContent").setAttribute("style", "background-image: url("https://firebasestorage.googleapis.com/v0/b/progress-7027e.appspot.com/o/03_teachers%2F_fonLight.PNG?alt=media&token=de2d01b2-3bf7-453d-93db-1216ebaf2976");");
+
 }

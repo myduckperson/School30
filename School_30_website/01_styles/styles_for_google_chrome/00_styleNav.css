@@ -67,12 +67,67 @@ input{
 /* вхід для адміна */
 /* вхід для адміна */
 /* вхід для адміна */
-.adminEntry{
+#welcomeRole{
+    width: 100%;
+    height: 20px;
+    background-color: var(--darkblue);
+    color: var(--gray);
+    cursor: pointer;
+    text-align: center;
+}
+.welcomePopUpHidden{
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 25px;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    z-index: -10;
+    /* height: 300px; */
+    width: 100%;
     /* color: var(--lightblue); */
+}
+.welcomePopUpShowen{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    padding: 0px 20px;
+    /* top: 150%; */
+    left: 0px;
+    width: 100%;
+    background-color: var(--blue);
+    color: var(--darkblue);
+    animation-name: alert;
+    animation-fill-mode: forwards;
+    animation-duration: var(--transitionStedy);
+}
+@keyframes alert{
+    0%{
+        opacity: 0;
+        top: 0px;
+    }
+    100%{
+        opacity: 1;
+        top: 150%;
+    }
+}
+.welcomePopUpShowen>div{
+    
+    width: 50%;
+}
+.welcomePopUpShowen img{
+    /* width: 100%; */
+    display: block;
+    margin-left: auto;
+}
+.header_search + .header_search{
+    margin-top: 50px;
+}
+.entry_icon img{
+    position: relative;
+    top: 5px;
+    right: 80px;
+    height: 35px;
+    width: 35px;
 }
 .adminEntryBtn{
     color: var(--lightblue);
@@ -127,12 +182,15 @@ input{
         z-index: 2;
     }
     /* search  */
+    .header_search:first-child{
+        padding-top: 5px;
+    }
     .header_search{
+        position: relative;
         width: 80%;
         margin: auto;
         --black: rgba(11,12,16,0.5);
         background-color: var(--black);
-        padding-top: 5px;
     }
     .header_search_form_input{
         display: block;
