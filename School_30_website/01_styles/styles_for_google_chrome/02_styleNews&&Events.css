@@ -271,6 +271,17 @@ input{
     font-size: 30px;
     font-weight: bold;
 }
+@media only screen and (max-width:600px){
+    .newsItemModal>header>p{
+        /* margin: auto; */
+        display: inline;
+        width: 50px;
+        line-height: 50px;
+        color: var(--darkblue);
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
 .newsItemModal>header>button{
     color: red;
     font-family: 'Roboto', sans-serif;
