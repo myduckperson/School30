@@ -5,12 +5,22 @@
     /* display: flex; */
     /* flex-wrap: wrap; */
     /* flex-direction: row-reverse; */
+    counter-reset: calibration;
 }
 .library .arrow_icon{
     position: absolute;
     top: 50%;
     right: 8%;
     transform: translate(0px, -50%) scale(50%);
+    border-color: var(--lightblue);
+    border-width: 3px;
+}
+.library .boxOfTheArrow{
+    border-color: inherit;
+}
+.library .theArrow{
+    border-color: inherit;
+    border-width: 3px;
 }
 .libraryWrapper{
     border: 4px solid var(--blue);
@@ -36,36 +46,56 @@
     /* flex: 1 0 300px; */
     position: relative;
 }
+.sidebarLibraryMenu{
+    /* flex: 1 0 400px; */
+}
 .sidebarLibraryContent{
+    /* margin-right: 200px; */
     /* flex: 1 0 200px; */
 }
 .sidebarLibraryContent>div>li{
     /* border-bottom: 3px solid var(--lightblue); */
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
     height: 50px;
+    width: 200px;
+    margin-right: 200px;
 }
 .sidebarLibraryContent>div>li:first-child{
+    flex-direction: row-reverse;
     /* border-top: 3px solid var(--lightblue); */
 }
 .sidebarLibraryContent header{
+    
     display: flex;
     justify-content: center;
     align-items: center;
     /* padding: 15px 0px; */
     position: relative;
     min-width: 200px;
-    /* border-bottom: 3px solid var(--lightblue); */
+    border-bottom: 3px solid var(--lightblue);
 }
 .sidebarLibraryContent header>h1{
     margin-left: -50px;
 }
+.sidebarLibraryContent header{
+    padding-left: 0px;
+    transition: var(--transitionFast);
+    /* margin-right: 0px; */
+    border-right: 3px solid var(--lightblue);
+}
+.sidebarLibraryContent header>.arrow_icon{
+    transition: var(--transitionFast);
+    transform: translate(0px, -50%) scale(50%) rotate(180deg);
+}
 .sidebarLibraryContent>div>li>ol{
     position: absolute;
-    right: 0px;
+    counter-increment: calibration;  
     top: 0px;
     /* display: none; */
     /* overflow: hidden; */
-    transition: var(--transitionStedy);
+    transition: var(--transitionFast);
     /* max-height: 0px; */
     /* max-height: 100%; */
     height: 60px;
@@ -77,11 +107,46 @@
     visibility: hidden;
     opacity: 0;
 }
+.sidebarLibraryContent>div>li:nth-child(odd)>ol{
+    left: 50%;
+}
+.sidebarLibraryContent>div>li:nth-child(even)>ol{
+    right: 0px;
+}
+.sidebarLibraryContent>div>li>ol{
+    height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    transition: var(--transitionFast);
+    width: 0px;
+    min-width: 0px;
+}
 .sidebarLibraryContent>div>li:first-child>ol{
     position: initial;
 }
-@media only screen and (min-width){
-    .sidebarLibraryContent header:hover ~ ol, .sidebarLibraryContent ol:hover{
+@media only screen and (min-width: 930px){
+    .sidebarLibraryContent header{
+        
+    }
+    .sidebarLibraryContent header:hover>h1, .sidebarLibraryContent ol:hover ~ header>h1{
+        color: var(--darkblue);
+    }
+    .sidebarLibraryContent header:hover .arrow_icon, .sidebarLibraryContent ol:hover ~ header>.arrow_icon{
+        transform: translate(0px, -50%) scale(50%) rotate(0deg);
+        border-color: var(--darkblue);
+    }
+    .sidebarLibraryContent header:hover, .sidebarLibraryContent ol:hover ~ header{
+        /* display: none; */
+        border-right: none;
+        /* justify-content: initial; */
+        padding-left: 50px;
+        background-color: var(--blue);
+        /* color: var(--darkblue); */
+        /* margin-right: 3px; */
+    }
+    .sidebarLibraryContent>div>li:hover ol{
+        /* width: 100%; */
+        min-width: 200px;
         visibility: visible;
         opacity: 1;
     }
@@ -113,35 +178,41 @@
     flex: 4 0 400px;
     height: 500px;
     overflow-y: auto;
+    border-left: 3px solid var(--lightblue);
 }
 .libraryContent>li{
-    display: none;
-    opacity: 0;
+    /* display: none; */
+    /* opacity: 0; */
     transition: var(--transitionStedy);
 }
 .libraryContent>li>div{
-    opacity: 0;
+    /* opacity: 0; */
     transition: var(--transitionStedy);
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    /* margin: auto; */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     text-align: center;
 }
 /* обгортка фотографії */
 .libraryContent>li>div>div:first-child{
     max-width: 200px;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
 }
 /* фотографія */
 .libraryContent img{
+    max-width: 200px;
     height: 100%;
     margin: auto;
     display: block;
+    object-fit: contain;
 }
 /* обгортка тексту */
 .libraryContent>li>div>div:last-child{
     /* height: 220px; */
-    /* width: 100%; */
+    width: 59%;
     overflow-y: auto;
 }
 .libraryContent p{

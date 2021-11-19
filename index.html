@@ -1210,7 +1210,7 @@
                         <thead>
                             <tr>
                                 <th colspan="5">
-                                    -Б
+                                    10-Б
                                 </th>
                             </tr>
                             <tr>
@@ -1598,7 +1598,7 @@
                             <div class="sliderDoc">
                                 <div class="card currentID c0" style="display: flex;">
                                     <h1>Наші вимоги</h1>
-                                    <p>Хоч середня освіта є обов'язковою, це не означає, що як учні, так батькі не мають
+                                    <p>Хоч середня освіта є обов'язковою, але це не означає, що як учні, так батькі не мають
                                         обов'язків.</p>
                                 </div>
                                 <div class="card c1">
@@ -1953,7 +1953,29 @@
 
                     <ul class="sidebarLibraryContent">
                         <div class="sidebarLibraryWrapper">
-                            <li class="menuLibraryItem">
+                                    <template id="magicShelfRow">
+                                        <li class="submeniLibraryItem">
+                                            <p id="magicBookPlace"></p>
+                                        </li>
+                                    </template>
+                                    <template id="magicShelfSystem">
+                                        <li class="menuLibraryItem">
+                                            <ol class="submenulibrary">
+                                            </ol>
+                                            <header class="menuLibraryItemHeader">
+                                                <h1 id="magicShelfGrade">11 класи</h1>
+                                                <div class="arrow_icon">
+                                                    <div class="boxOfTheArrow">
+                                                        <div class="theArrow"></div>
+                                                    </div>
+                                                </div>
+                                            </header>
+                                        </li>
+                                    </template>
+                            <!-- <li class="menuLibraryItem">
+                                <ol class="submenulibrary">
+                                    
+                                </ol>
                                 <header class="menuLibraryItemHeader">
                                     <h1>11 класи</h1>
                                     <div class="arrow_icon">
@@ -1962,80 +1984,17 @@
                                         </div>
                                     </div>
                                 </header>
-                                <ol class="submenulibrary">
-                                    <li class="submenuLibraryItem">
-                                        <p>Алгебра</p>
-                                        <!-- <label class="grade">11-A</label> -->
-                                        <!-- <input class="checker" type="checkbox"> -->
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Геометрія</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Українська література</p>
-                                        <!-- <label class="grade">11-Б</label> -->
-                                        <!-- <input class="checker" type="checkbox"> -->
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Українська мова</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Англійська мова</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Всесвітня історія</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Історія України</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Астрономія</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Захист Вітчизни</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Технології</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Географія</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Фізика</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Біологія</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Інформатика</p>
-                                    </li>
-                                    <li class="submenuLibraryItem">
-                                        <p>Хімія</p>
-                                    </li>
-                                </ol>
                             </li>
                             <li class="menuLibraryItem">
-                                <header class="menuLibraryItemHeader">
-                                    <h1>11 класи</h1>
-                                    <div class="arrow_icon">
-                                        <div class="boxOfTheArrow">
-                                            <div class="theArrow"></div>
-                                        </div>
-                                    </div>
-                                </header>
                                 <ol class="submenulibrary">
                                     <li id="math00" class="submenuLibraryItem">
                                         <p>Алгебра</p>
-                                        <!-- <label class="grade">11-A</label> -->
-                                        <!-- <input class="checker" type="checkbox"> -->
                                     </li>
                                     <li id="math01" class="submenuLibraryItem">
                                         <p>Геометрія</p>
                                     </li>
                                     <li class="submenuLibraryItem">
                                         <p>Українська література</p>
-                                        <!-- <label class="grade">11-Б</label> -->
-                                        <!-- <input class="checker" type="checkbox"> -->
                                     </li>
                                     <li class="submenuLibraryItem">
                                         <p>Українська мова</p>
@@ -2074,13 +2033,93 @@
                                         <p>Хімія</p>
                                     </li>
                                 </ol>
-                            </li>
+                                <header class="menuLibraryItemHeader">
+                                    <h1>11 класи</h1>
+                                    <div class="arrow_icon">
+                                        <div class="boxOfTheArrow">
+                                            <div class="theArrow"></div>
+                                        </div>
+                                    </div>
+                                </header>
+                            </li>                            <li class="menuLibraryItem">
+                                <ol class="submenulibrary">
+                                    <li class="submenuLibraryItem">
+                                        <p>Алгебра</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Геометрія</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Українська література</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Українська мова</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Англійська мова</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Всесвітня історія</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Історія України</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Астрономія</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Захист Вітчизни</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Технології</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Географія</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Фізика</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Біологія</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Інформатика</p>
+                                    </li>
+                                    <li class="submenuLibraryItem">
+                                        <p>Хімія</p>
+                                    </li>
+                                </ol>
+                                <header class="menuLibraryItemHeader">
+                                    <h1>11 класи</h1>
+                                    <div class="arrow_icon">
+                                        <div class="boxOfTheArrow">
+                                            <div class="theArrow"></div>
+                                        </div>
+                                    </div>
+                                </header>
+                            </li> -->
                         </div>
                     </ul>
                 </div>
                 <!-- </div> -->
                 <ul class="libraryContent">
-                    <li class="book" id="math00">
+                    <template id="magicShelf">
+                        <li class="book">
+                            <div>
+                                <div>
+                                    <img  id="shelfImage" alt="зображення підручника"
+                                        src="https://mon.gov.ua/storage/app/media/zagalna%20serednya/uchytel-roku/shatkivskij-vm.jpg">
+                                </div>
+                                <div>
+                                    <h1 id="shelfName">Математика</h1>
+                                    <h2 id="shelfSubject">Математика</h2>
+                                    <h2 id="shelfGrade">11 клас</h2>
+                                    <a  id="shelfLink">Посилання на скачування</a>
+                                </div>
+                            </div>
+                        </li>                        
+                    </template>
+                    <!-- <li class="book" id="math00">
                         <div>
                             <div>
                                 <img
@@ -2088,18 +2127,8 @@
                             </div>
                             <div>
                                 <h1>Математика</h1>
-                                <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia nobis eos quam
-                                    quasi dolores itaque?</h2>
-                                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed, vitae.</h3>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, mollitia maiores
-                                    esse laudantium accusamus assumenda corporis sed labore cumque, at porro dolores
-                                    ratione earum, tempore dicta hic nisi blanditiis necessitatibus!</p>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, mollitia maiores
-                                    esse laudantium accusamus assumenda corporis sed labore cumque, at porro dolores
-                                    ratione earum, tempore dicta hic nisi blanditiis necessitatibus!</p>
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla, mollitia maiores
-                                    esse laudantium accusamus assumenda corporis sed labore cumque, at porro dolores
-                                    ratione earum, tempore dicta hic nisi blanditiis necessitatibus!</p>
+                                <h2>11 клас</h2>
+                                <h3>Посилання на скачування</h3>
                             </div>
                         </div>
                     </li>
@@ -2125,7 +2154,7 @@
                                     ratione earum, tempore dicta hic nisi blanditiis necessitatibus!</p>
                             </div>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <button class="closeBtn">Закрити всі книги</button>
@@ -2361,9 +2390,10 @@
     <script src="School_30_website/02_scripts/main/library.js"></script>
     <script src="School_30_website/02_scripts/main/script.js"></script>
 
-    <!-- <script src="School_30_website/02_scripts/main/comments.js" type="module"></script> -->
-    <!-- <script src="School_30_website/02_scripts/main/slideCreatorFirebase.js" type="module"></script> -->
+    <script src="School_30_website/02_scripts/main/admin.js" type="module"></script>
     <script src="School_30_website/02_scripts/prototypes/auth.js" type="module"></script>
+    <script src="School_30_website/02_scripts/main/comments.js" type="module"></script>
+    <script src="School_30_website/02_scripts/main/slideCreatorFirebase.js" type="module"></script>
 
 </body>
 

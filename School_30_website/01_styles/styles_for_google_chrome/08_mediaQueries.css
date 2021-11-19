@@ -513,6 +513,14 @@
 /* персонал */
 /* персонал */
 @media only screen and (max-width: 930px){
+    .sidebarLibraryContent>div>li:first-child{
+        flex-direction: column-reverse;
+        /* border-top: 3px solid var(--lightblue); */
+    }
+    .sidebarLibraryContent header{
+        padding: 5px 0px;
+    }
+
     .lockdown>article>div:last-child{
         flex-direction: column;
     }
@@ -544,11 +552,12 @@
         height: auto;
     }
     .sidebarLibraryContent>div>li{
-        flex-direction: column;
+        flex-direction: column-reverse;
         width: 100%;
         height: auto;
     }
     .sidebarLibraryContent>div>li>ol{
+        width: 100%;
         max-height: 0px;
         transition: var(--transitionStedy);
         display: none;

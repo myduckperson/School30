@@ -1,0 +1,186 @@
+body{
+    color: var(--gray);
+}
+
+.adminNav{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+.CM{
+    display: none;
+}
+input{
+    color: var(--gray);
+    cursor: pointer;
+}
+label{
+    cursor: pointer;
+}
+.adminsWish{
+    display: flex;
+    justify-content: space-around;
+}
+.chooseComments{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+#radio{
+    transition: var(--transitionFast);
+    /* width: 30%; */
+    padding: 1% 2.5%;
+    /* height: 30px; */
+    font-size: 30px;
+    /* text-align: center; */
+    margin: 3px auto 3px 0px;
+    border: 2px solid var(--lightblue);
+    cursor: pointer;
+}
+#radio:hover{
+    margin: 0px auto 0px 0px;
+    border: 5px solid var(--blue);
+}
+#radioRemove{
+
+}
+.chooseComments input{
+    /* text-align: right; */
+    /* width: 10%; */
+    margin-right: auto;
+}
+.chooseComments input:last-child{
+    transition: var(--transitionFast);
+    width: 50%;
+    min-width: 350px;
+    font-size: 30px;
+    padding: 1.5% 5%;
+    border: 2px solid var(--lightblue);
+    margin: 3px auto 3px 0px;
+    /* margin: auto; */
+    /* text-align: center; */
+}
+.chooseComments input:last-child:hover{
+    border: 5px solid var(--blue);
+    margin: 0px auto 0px 0px;
+}
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+/* Коменти */
+
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+
+/* відправити підручники */
+/* відправити підручники */
+/* відправити підручники */
+.LB{
+    width: 90%;
+    margin: auto;
+}
+.LB h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.uploadBooks{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+.uploadBooks>div{
+    margin-top: 30px;
+}
+.uploadBooks h1{
+    font-size: 40px;
+}
+.uploadBooks input{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    background-color: var(--gray);
+    color: var(--darkblue);
+}
+#libraryBookPhoto{
+    width: 50%;
+    height: 30px;
+}
+.uploadBooks select{
+    width: 30%;
+    height: 30px;
+}
+/* відправити підручники */
+/* відправити підручники */
+/* відправити підручники */
+
+/* отримати підручники */
+/* отримати підручники */
+/* отримати підручники */
+.getBooks{
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+}
+.getBooks>div{
+    margin-top: 30px;
+}
+.uploadBooks h1{
+    font-size: 40px;
+}
+.getBooks input{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    background-color: var(--gray);
+    color: var(--darkblue);
+}
+#libraryBookPhoto{
+    width: 50%;
+    height: 30px;
+}
+.getBooks select{
+    width: 30%;
+    height: 30px;
+}
+.getBooks input[type="button"], .uploadBooks input[type="button"]{
+    margin: 30px auto;
+    margin-top: 100px;
+    transition: var(--transitionFast);
+    /* padding: 10px; */
+    height: 60px;
+    background-color: var(--darkblue);
+    border: 3px solid var(--lightblue);
+    color: var(--gray);
+    /* margin: 3px auto; */
+}
+.getBooks input[type="button"]:hover, .uploadBooks input[type="button"]:hover{
+    border: 6px solid var(--lightblue);
+    background-color: var(--blue);
+    /* margin: 0px; */
+    color: var(--darkblue);
+}
+/* отримати підручники */
+/* отримати підручники */
+/* отримати підручники */
+
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */
+/* бібліотека */

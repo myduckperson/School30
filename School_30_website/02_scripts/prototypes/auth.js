@@ -40,7 +40,11 @@ console.log(window.location.href);
 // const provider = new GoogleAuthProvider();
 // const auth = getAuth(app);
 const signBtn = document.querySelector("#signInAndOut");
-signBtn.addEventListener("click", popUpGoogle, {once: true});
+if( signBtn){
+      signBtn.addEventListener("click", popUpGoogle, {once: true}); 
+      console.log(document.innerHTML)     
+}
+
 async function popUpGoogle(){
       signInWithPopup(auth, provider)
             .then((result) => {
@@ -68,17 +72,48 @@ const welcomeName = document.querySelector("#welcomeName");
 const welcomeEmail = document.querySelector("#welcomeEmail");
 const welcomeRole = document.querySelector("#welcomeRole");
 const welcomeImg = document.querySelector("#welcomeImg");
+// console.log()
+// let checker = false;
+if(document.querySelector(".adminNav") && user == null){
+    ////popUpGoogle()
+
+}
+onAuthStateChanged(auth, user =>{
+      // console.log(user.uid)
+      if(user && !alert){
+            if(user.uid !== "TAjlQkwzQuP474H5wSZynTFIZ383"){
+                 window.alert("Для користування адмін панеллю потрібно увійти у відповідний гугл аккаунт на головній сторінці")
+                  document.querySelector("html").remove(); 
+            }
+      }else if(!user && !alert){
+            popUpGoogle()
+      }
+});
+
+// onAuthStateChanged(auth, (user) => {
+//       console.log(user)
+//       if (user) {    
+//             if(user.uid !== "TAjlQkwzQuP474H5wSZynTFIZ383" && checker){
+//           //        window.alert("Для користування адмін панеллю потрібно увійти у відповідний гугл аккаунт на головній сторінці")
+//                   document.querySelector("html").remove();            
+//             }    
+//       } else {
+//             // User is signed out
+//             // ...
+//       }
+// });     
 if (user !== null) {
       // The user object has basic properties such as display name, email, etc.
       const displayName = user.displayName;
       const email = user.email;
       const photoURL = user.photoURL;
       const emailVerified = user.emailVerified;
-
+      // console.log(document.innerHTML)
       // The user's ID, unique to the Firebase project. Do NOT use
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
       const uid = user.uid;
+}else{
 }
 async function signOutProcess(){
       signOut(auth).then(() => {
@@ -100,7 +135,7 @@ async function signOutProcess(){
       });
 }
 onAuthStateChanged(auth, (user) => {
-      if (user) {    
+      if (user && signBtn) {    
             signBtn.addEventListener("click", signOutProcess, {once: true});
             signBtn.lastElementChild.innerText = "Виходь!";
             setTimeout( () => {
@@ -142,7 +177,8 @@ onAuthStateChanged(auth, (user) => {
 });      
 
 function goToAdmin(){
-      window.location.href = "/School_30_website/00_htmls/admin.html"
+      // console.log(window.location.href)
+      window.location.href += "School_30_website/00_htmls/admin.html"
 }
 
 // Get a reference to the storage service, which is used to create references in your storage bucket

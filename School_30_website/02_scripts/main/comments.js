@@ -6,7 +6,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
 import { getAuth,signInWithPopup ,GoogleAuthProvider , onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
-import { getFirestore, collection, addDoc, getDocs, doc, getDoc, Timestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import { getFirestore, deleteDoc, updateDoc, collection, addDoc, getDocs, doc, getDoc, Timestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 // import { initializeApp } from "firebase/app";
 // import { getAnalytics } from "firebase/analytics";
@@ -104,6 +104,15 @@ const provider = new GoogleAuthProvider();
 //   });
 // }
 
+
+document.querySelectorAll("#radio").forEach( obj =>{
+      obj.addEventListener("click", setChecked);
+});
+function setChecked(){
+      console.log("checked")
+      this.firstElementChild.checked = true;
+}
+
 // дата та час
 // дата та час
 // дата та час
@@ -112,12 +121,30 @@ const provider = new GoogleAuthProvider();
 // дата та час
 // дата та час
       const submitBtn = document.querySelector("#submitBtn");
-if(window.location.href == "https://myduckperson.github.io/School30/" && window.location.href == "localhost:5500"){
+      const chosen = document.querySelector("#chooseComments");
+if(!chosen){
       setDateToInput(); 
       setTimeToInput();
       setInterval(setTimeToInput, 1000);
       submitBtn.addEventListener("click", send);
       showIt();
+}else{
+      const ap = document.querySelector("#approved");
+      const NanAp = document.querySelector("#NaN_approved");
+      const all = document.querySelector("#All");
+      // const approve = document.querySelectorAll(".approve");
+      // const deleteC = document.querySelectorAll(".delete");
+      // approve.forEach( (obj, index) =>{
+      //       console.log(obj);
+      //       obj.addEventListener("click", approveComment);
+      //       obj.index = index;
+      // });
+      // deleteC.forEach( (obj, index) =>{
+      //       obj.addEventListener("click", deleteComment);
+      //       obj.index = index;
+      // });
+      // console.log("answer")
+      chosen.addEventListener("click", refresh);
 }
 // console.log("bruh")
 function setDateToInput(){
@@ -231,22 +258,58 @@ async function send(e){
   }
 
 let i = 0;
-async function showIt(){
+function refresh(){
+      let answerValue = null;
+      const answer = document.querySelectorAll('input[name="cm"]');
+      answer.forEach( obj =>{
+            if(obj.checked){
+                  console.log("yes")
+                  answerValue = obj.value;
+            }
+      });
+      const box = document.querySelector("#boxC");
+      for(let i=1; i < box.children.length; i++){
+            box.children[i].remove()            
+      }
+      if(answerValue !== 4){
+            showIt(answerValue)            
+      }
+}
+async function showIt(answerValue){
+  let i = 0;
+      // console.log(i)
   // const querySnapshot = await getDocs(collection(db, "comments"));
   // console.log(querySnapshot);
   // const docRef = doc(db, "pages", "news00");
   // const docSnap = await getDoc(docRef);
   // console.log(docSnap.data());
+  let checker = false;
   const q = query(collection(db, "comments"), orderBy("date", "asc"));
   // console.log(getDocs(q));
   const querySnapshot = await getDocs(q);
+      if(answerValue != null && answerValue != undefined){
+            console.log("maybe")
+            if(answerValue == 1){
+                  checker = true;
+                  console.log("maybe")
+            }else if(answerValue == 2){
+                  checker == false;
+            }else if(answerValue == 3){
+                  checker = 4;
+            }
+      }else{
+            console.log("failer");
+            checker = true;
+      }
   querySnapshot.forEach((doc) => {
-    if(doc.data().approve){
-      
+      if(checker == doc.data().approve || checker == 4){
+            // console.log(i)
           let createTemplate = new Promise((resolve, reject) =>{
               var template = document.querySelector("#comTemp");
               var clone = template.content.cloneNode(true);
               var box = document.querySelector("#boxC");
+              console.log(doc._key.path.segments)
+              console.log(template.content.firstElementChild)
               box.appendChild(clone);  
               const uNameC = document.querySelectorAll("#usersNameComment");
               const uMailC = document.querySelectorAll("#usersMailComment");
@@ -268,6 +331,8 @@ async function showIt(){
               const uDateC = document.querySelectorAll("#usersDateComment");
               const uTimeC = document.querySelectorAll("#usersTimeComment");
               const stars = document.querySelectorAll(".starIDC");
+              console.log(uNameC, i);
+              uNameC[i].omegaId = doc._key.path.segments[6];
               // console.log(doc.data().uName,doc.data().uMail,doc.data().uMessage,doc.data().date);
               let br = doc.data().date.toDate();
               const offset = new Date().getTimezoneOffset();
@@ -292,9 +357,57 @@ async function showIt(){
               i++;
               // console.log(i)
               // uDateC[0].value = doc.data().date;
-          }).catch(() => {
-              alert("error not approved comment detected")
+          }).catch( error => {
+              alert(error)
           });
     }
   });
+  const chosen = document.querySelector("#chooseComments");
+  const approve = document.querySelectorAll(".approve");
+  const deleteC = document.querySelectorAll(".delete");
+  approve.forEach( (obj, index) =>{
+        console.log(obj);
+        obj.addEventListener("click", approveComment);
+        obj.index = index;
+  });
+  deleteC.forEach( (obj, index) =>{
+        obj.addEventListener("click", deleteComment);
+        obj.index = index;
+  });
+  console.log("answer")
 }
+
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+
+async function approveComment(e){
+      console.log("something")
+      const targetApprovel = this.parentElement.previousElementSibling.previousElementSibling.firstElementChild.firstElementChild.omegaId;
+      console.log(targetApprovel)
+      const aimedOnTarget = doc(db, "comments", `${targetApprovel}`);
+
+      // Set the "capital" field of the city 'DC'
+      await updateDoc(aimedOnTarget, {
+        approve: true
+      });
+      const article = this.parentElement.parentElement;
+      article.remove();
+}
+async function deleteComment(e){
+      const targetApprovel = this.parentElement.previousElementSibling.previousElementSibling.firstElementChild.firstElementChild.omegaId;
+      const article = this.parentElement.parentElement;
+      await deleteDoc(doc(db, "comments", `${targetApprovel}`));
+      article.remove();
+}
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка
+// адмінка

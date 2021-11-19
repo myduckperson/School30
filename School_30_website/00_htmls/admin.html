@@ -4,18 +4,146 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheets" href="../01_styles/styles_for_google_chrome/09_comments.css">
-    <link rel="stylesheets" href="../01_styles/styles_for_google_chrome/color_dark.css">
+    <link rel="stylesheet" href="../01_styles/styles_for_google_chrome/09_comments.css">
+    <link rel="stylesheet" href="../01_styles/styles_for_google_chrome/07_iconTemplates.css">
+    <link rel="stylesheet" href="../01_styles/styles_for_google_chrome/13_admin.css">
+    <link rel="stylesheet" href="../01_styles/styles_for_google_chrome/color_dark.css">
 
     <title>Admin</title>
 </head>
 <body>
     <h1>Welcome admin</h1>
-    <section class="comments" id="comments">
+        <section class="adminNav">
+            <div class="adminNavItems" id="commentsNav">
+                <h1 id="CM">Коментарі</h1>
+            </div>
+            <div class="adminNavItems" id="libraryNav">
+                <h1 id="LB">Бібліотека</h1>
+            </div>
+        </section>
+        <section class="LB">
+                <h1>Бібліотека</h1>
+                <form class="uploadBooks">
+                    <div>
+                        <h1>Завантаження підручників</h1>
+                    </div>
+                    <div>
+                        <label>Ім'я :</label>
+                        <input type="text" id="libraryBookName">
+                    </div>
+                    <div>
+                        <label>Клас :</label>
+                        <select id="gradeOpt" class="gradeOpt" name="grades">
+                            <!-- <option value="00" name="1 клас">class</option>
+                            <option value="01" name="2 клас">classBruh</option> -->
+                        </select>
+                    </div>
+                    <div>
+                        <label>Предмет :</label>
+                        <select id="subjectOpt" name="subjects">
+                            <option value="Абетка">Абетка</option>
+                            <option value="Інформатика">Інформатика</option>
+                            <option value="Англійська мова">Англійська мова</option>
+                            <option value="Алгебра">Алгебра</option>
+                            <option value="Геометрія">Геометрія</option>
+                            <option value="Математика">Математика</option>
+                            <option value="Астрономія">Астрономія</option>
+                            <option value="Біологія">Біологія</option>
+                            <option value="Зарубіжна література">Зарубіжна література</option>
+                            <option value="Українська література">Українська література</option>
+                            <option value="Українська мова">Українська мова</option>
+                            <option value="Російська мова">Російська мова</option>
+                            <option value="Німецька мова">Німецька мова</option>
+                            <option value="Польска мова">Польска мова</option>
+                            <option value="Французька мова">Французька мова</option>
+                            <option value="Образотворче мистецтво">Образотворче мистецтво</option>
+                            <option value="Музичне мистецтво">Музичне мистецтво</option>
+                            <option value="Мистецтво">Мистецтво</option>
+                            <option value="Технології">Технології</option>
+                            <option value="Трудове навчання">Трудове навчання</option>
+                            <option value="Всесвітня історія">Всесвітня історія</option>
+                            <option value="Історія України">Історія України</option>
+                            <option value="Історія">Історія</option>
+                            <option value="Фізика">Фізика</option>
+                            <option value="Логіка">Логіка</option>
+                            <option value="Естетика">Естетика</option>
+                            <option value="Географія">Географія</option>
+                            <option value="Основи здоров'я">Основи здоров'я</option>
+                            <option value="Правознавство">Правознавство</option>
+                            <option value="Громадянська освіта">Громадянська освіта</option>
+                            <option value="Хімія">Хімія</option>
+                            <option value="Захист Вітчизни">Захист Вітчизни</option>
+                            <option value="Інший">Інший</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Посилання :</label>
+                        <input type="text" id="libraryBookLink">
+                    </div>
+                    <div>
+                        <label>Зображення (не обов'язково) :</label>
+                        <input type="file" id="libraryBookPhoto">
+                    </div>
+                    <input type="button" id="sendBooks" value="Завантажити підручник">
+                </form>
+                <form class="getBooks">
+                    <div>
+                        <h1>Отримання підручників</h1>
+                    </div>
+                    <!-- <div>
+                        <label>Ім'я :</label>
+                        <input type="text" id="libraryBookName">
+                    </div> -->
+                    <div>
+                        <label>Клас :</label>
+                        <select id="gradeOptGet" class="gradeOpt" name="gradesGet">
+                            <option value="-1">Оберіть клас</option>
+                            <!-- <option>1 клас</option>
+                            <option>2 клас</option>
+                            <option>3 клас</option> -->
+                        </select>
+                    </div>
+                    <div>
+                        <label>Предмет :</label>
+                        <select id="subjectOptGet" name="subjectsGet">
+                            <option value="00">Усі предмети</option>
+                            <!-- <option>Математика</option>
+                            <option>Інформатика</option>
+                            <option>Англійська мова</option> -->
+                        </select>
+                    </div>
+                    <!-- <div>
+                        <label>Посилання :</label>
+                        <input type="text" id="libraryBookLink">
+                    </div> -->
+                    <!-- <div>
+                        <label>Зображення (не обов'язково) :</label>
+                        <input type="file" id="libraryBookPhoto">
+                    </div> -->
+                    <input type="button" id="getBooksNow" value="Відобразити наявні книжки">      
+                </form>
+                <div id="magicBox">
+                    <template id="magicBook">
+                        <article>
+                            <div>
+                                <img  id="magicBookPhoto">
+                            </div>
+                            <div>
+                                <h1 id="magicBookName"></h1>
+                                <h2 id="magicBookGrade"></h2>
+                                <h2 id="magicBookSubject"></h2>
+                                <a id="magicBookLink">Посилання на скачування PDF файлу</a>
+                            </div>
+                        </article>
+                    </template>
+                    <div class="magicWrapper"></div>
+                </div>
+        </section>
+    <section class="comments CM" id="comments">
         <div class="info_title">
             <h1>Зворотній зв'язок</h1>
         </div>
-        <section class="CM">
+        <section class="commentsContent">
             <div class="comments_wrapper">
                 <!-- <form class="usersData">
                     <div class="uName">
@@ -79,14 +207,24 @@
                 </form> -->
                 <div class="comments_content">
                     <h1>Коментарі користувачів</h1>
-                    <form>
-                        <label>Підтвердженні</label>
-                        <input type="radio" name="cm" id="approved">
-                        <label>Не підтвердженні</label>
-                        <input type="radio" name="cm" id="NaN_approved">
-                        <label>Усі</label>
-                        <input type="radio" name="cm" id="All">
-                        <input type="submit" id="chooseComments" value="Підтвердіть вибір">
+                    <form class="chooseComments">
+                        <div id="radio">
+                            <input type="radio" name="cm" value="1" id="approved">                            
+                            <label>Підтвердженні</label>
+                        </div>
+                        <div id="radio">
+                            <input type="radio" name="cm" value="2" id="NaN_approved">
+                            <label>Не підтвердженні</label>
+                        </div>
+                        <div id="radio">
+                            <input type="radio" name="cm" value="3" id="All">
+                            <label>Усі</label>
+                        </div>
+                        <div id="radio" class="radio">
+                            <input type="radio" name="cm" value="4" id="remove">
+                            <label>Сховати коментарі</label>
+                        </div>
+                        <input type="button" id="chooseComments" value="Підтвердіть вибір">
                     </form>
                     <div class="wrapper_comments">
                         <div class="comments_container" id="boxC">
@@ -155,6 +293,23 @@
                                         <p class="usersMessageComment">Lorem ipsum dolor sit amet consectetur
                                             adipisicing elit. Tempore saepe nam vitae exercitationem unde quasi!</p>
                                     </div>
+                                    <div class="adminsWish">
+                                        <button class="delete">
+                                            <div class="trashcanIcon">
+                                                <div class="cap">
+                                                    <div class="handle"></div>
+                                                    <div class="case"></div>
+                                                </div>
+                                                <div class="mainBox">
+                                                    <div class="linesL"></div>
+                                                    <div class="linesR"></div>
+                                                </div>
+                                            </div>
+                                        </button>
+                                        <button class="approve">
+                                            Галочка
+                                        </button>
+                                    </div>
                                 </article>
                             </template>
                         </div>
@@ -163,7 +318,8 @@
                 </div>
             </div>
         </section>
-
+        <script src="../02_scripts/prototypes/auth.js" type="module"></script>
+        <script src="../02_scripts/main/admin.js" type="module"></script>
         <script src="../02_scripts/main/comments.js" type="module"></script>
 </body>
 </html>

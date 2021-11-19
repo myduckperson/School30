@@ -76,10 +76,10 @@ input{
     border-bottom-color: var(--blue) ;
 }
 .inactiveStable{
-    border-bottom-color: var(--blue) ;
+    border-bottom-color: var(--blue) !important;
 }
 .activeStable{
-    border-bottom-color: var(--gold) ;
+    border-bottom-color: var(--gold) !important;
 }
 .starV0 {
     transform: translate(-50%, -50%) rotate(0deg);

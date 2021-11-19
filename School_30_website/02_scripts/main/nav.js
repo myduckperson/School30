@@ -80,7 +80,10 @@ function mainCall(e){
         }, spdStedy);
     }
 }
-
+const options = document.querySelectorAll(".submenu_ul_li")
+options.forEach( obj =>{
+    obj.addEventListener("click", mainCall);
+});
 // SHSS - Submenu Hiding && Showing System, система ховання та з'являння підменню
 function show(event){
     // отримує індекс кнопки
