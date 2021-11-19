@@ -37,6 +37,14 @@
     /* border-bottom: 2px solid var(--lightblue); */
     /* margin-bottom: 30px; */
 }
+.closeBtn{
+    display: block;
+    width: 20%;
+    margin: 30px auto;
+    height: 50px;
+    background-color: var(--darkblue);
+    border: 3px solid var(--lightblue);
+}
 /* бокова панель */
 /* бокова панель */
 /* бокова панель */
@@ -155,6 +163,7 @@
     padding: 6px 0px;
     border-bottom: 2px solid var(--blue);
 }
+
 .sidebarLibraryContent>li>ul>li{
     border-top: 2px solid var(--blue);
     padding: 10px 20px;
@@ -183,6 +192,7 @@
 .libraryContent>li{
     /* display: none; */
     /* opacity: 0; */
+    border: 2px solid var(--blue);
     transition: var(--transitionStedy);
 }
 .libraryContent>li>div{
@@ -191,7 +201,7 @@
     width: 100%;
     /* margin: auto; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
     text-align: center;
 }
@@ -212,7 +222,8 @@
 /* обгортка тексту */
 .libraryContent>li>div>div:last-child{
     /* height: 220px; */
-    width: 59%;
+    /* width: 59%; */
+    padding: 20px;
     overflow-y: auto;
 }
 .libraryContent p{

@@ -2,6 +2,7 @@ const uList = document.querySelector(".sidebarTeachersContent");
 const headerBtns = uList.querySelectorAll("header");
 headerBtns.forEach( obj =>{
     obj.addEventListener("click", show);
+    obj.avarageHeight = 79;
 });
 const teacherChecker = uList.querySelectorAll("input");
 teacherChecker.forEach( (obj, index) =>{

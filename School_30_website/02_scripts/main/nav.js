@@ -97,7 +97,13 @@ function show(event){
     // додано 28 (2*14) бо ширина тексту в деяких з пунктів листу може перевищувати ширину екрана
     // тобто додавати ще один рядок для тексту тим самим збільшуючи ширину елементу 
     // 37 помножене на кількість пунктів у листі
-    let heightMult = 37 * subUl.children.length + 28;
+    if(this.avarageHeight){
+        modifier = this.avarageHeight;
+    }else{
+        modifier = 37;        
+    }
+
+    let heightMult = modifier * subUl.children.length + 28;
     if(subUl.style.display === "block"){
         // для анімації +/- знімає клас "optnLines" з смужок плюса
         for(i = 0; i<2; i++){

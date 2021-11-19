@@ -97,7 +97,8 @@
                     <div>
                         <label>Клас :</label>
                         <select id="gradeOptGet" class="gradeOpt" name="gradesGet">
-                            <option value="-1">Оберіть клас</option>
+                            <option value="null" selected="selected">Оберіть клас</option>
+                            <option value="-1">Усі класи</option>
                             <!-- <option>1 клас</option>
                             <option>2 клас</option>
                             <option>3 клас</option> -->
@@ -106,6 +107,7 @@
                     <div>
                         <label>Предмет :</label>
                         <select id="subjectOptGet" name="subjectsGet">
+                            <option value="null" selected="selected">Оберіть предмет</option>
                             <option value="00">Усі предмети</option>
                             <!-- <option>Математика</option>
                             <option>Інформатика</option>
@@ -134,6 +136,18 @@
                                 <h2 id="magicBookSubject"></h2>
                                 <a id="magicBookLink">Посилання на скачування PDF файлу</a>
                             </div>
+                            <button class="deleteBook">
+                                <div class="trashcanIcon">
+                                    <div class="cap">
+                                        <div class="handle"></div>
+                                        <div class="case"></div>
+                                    </div>
+                                    <div class="mainBox">
+                                        <div class="linesL"></div>
+                                        <div class="linesR"></div>
+                                    </div>
+                                </div>
+                            </button>
                         </article>
                     </template>
                     <div class="magicWrapper"></div>

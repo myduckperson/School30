@@ -173,9 +173,22 @@ label{
     /* margin: 0px; */
     color: var(--darkblue);
 }
+
+.magicWrapper>article{
+    position: relative;
+    width: 80%;
+    margin: auto;
+    border: 2px solid var(--blue);
+}
 /* отримати підручники */
 /* отримати підручники */
 /* отримати підручники */
+
+.deleteBook{
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+}
 
 /* бібліотека */
 /* бібліотека */

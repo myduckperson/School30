@@ -4,28 +4,20 @@ gradeOpt.forEach( (obj, index) =>{
     obj.addEventListener("click", dropDown);
     const object = obj.querySelectorAll("li");
     obj.index = index;
-    object.forEach( obj =>{
-        // console.log(obj)
-        obj.addEventListener("click", showDesc);
-    });
     // obj.index = index;
 });
-function showDesc(e){
-    // const objIndex = e.currentTarget.index;
-    const twinObjects = document.querySelectorAll(`#${this.id}`);
-    const displayV = window.getComputedStyle(twinObjects[1]).getPropertyValue('display');
-    if( displayV !== "none" ){
-        twinObjects[1].firstElementChild.style.opacity = 0;
-        setTimeout( () => {twinObjects[1].style.display = "none";}, spdStedy);
-    }else{
-        twinObjects[1].style.display = "initial";
-        setTimeout( () => {twinObjects[1].firstElementChild.style.opacity = 1;}, 0);
-    }
-}
 const closeBtn = document.querySelector(".closeBtn");
 const books = document.querySelectorAll(".book");
+console.log(parent)
 closeBtn.addEventListener("click", closeIt);
 function closeIt(){
+    const parent = document.querySelectorAll(".libraryContent>li");
+    const liSh = document.querySelectorAll(".submeniLibraryItem");
+    // console.log("christ")
+        for(let n=0; n < liSh.length; n++){
+            // console.log("christ")
+            liSh[n].boo = true;
+        }
     gradeOpt.forEach( obj =>{
         obj.firstElementChild.style.opacity = 0;
         obj.firstElementChild.style.maxHeight = 0;
@@ -34,8 +26,8 @@ function closeIt(){
         // console.log(twinObject.style.opacity);
         setTimeout( () => {obj.firstElementChild.style.display = "none";}, spdStedy); 
     });
-    books.forEach( obj => {        
-        obj.firstElementChild.style.opacity = 0;
+    parent.forEach( obj => {        
+        obj.style.opacity = 0;
         setTimeout( () => {obj.style.display = "none";}, spdStedy);});
 }
 function dropDown(e){

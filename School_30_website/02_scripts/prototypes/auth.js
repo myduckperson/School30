@@ -30,6 +30,10 @@ const app = initializeApp(firebaseConfig);
 // const app = initializeApp(firebaseConfig);  was unneeded cuz omega video
 // const analytics = getAnalytics(firebaseApp);
 const auth = getAuth(app);
+const user = auth.currentUser;
+if(user.uid =="TAjlQkwzQuP474H5wSZynTFIZ383"|| user.uid =="YmFLTsUoKSSc2hnLSvPboe77av23"){
+
+}
 // auth.languageCode = 'it';
 // To apply the default browser preference instead of explicitly setting it.
 // firebase.auth().useDeviceLanguage();
@@ -40,7 +44,7 @@ console.log(window.location.href);
 // const provider = new GoogleAuthProvider();
 // const auth = getAuth(app);
 const signBtn = document.querySelector("#signInAndOut");
-if( signBtn){
+if(!user){
       signBtn.addEventListener("click", popUpGoogle, {once: true}); 
       console.log(document.innerHTML)     
 }
@@ -67,7 +71,6 @@ async function popUpGoogle(){
             });      
 }
 const alert = document.querySelector(".welcomePopUpHidden");
-const user = auth.currentUser;
 const welcomeName = document.querySelector("#welcomeName");
 const welcomeEmail = document.querySelector("#welcomeEmail");
 const welcomeRole = document.querySelector("#welcomeRole");
@@ -118,17 +121,17 @@ if (user !== null) {
 async function signOutProcess(){
       signOut(auth).then(() => {
             welcomeName.innerText = "Допобачення";
-            welcomeEmail.innerText = "";
-            welcomeRole.innerText = "";
+            // welcomeEmail.innerText = "";
+            // welcomeRole.innerText = "";
             // welcomeImg.s = "";
             
             setTimeout( () => {
-                  alert.classList.add("welcomePopUpHidden");
                   alert.classList.remove("welcomePopUpShowen");
+                  alert.classList.add("welcomePopUpHidden");
                   signBtn.lastElementChild.innerText = "Заходь!";
                   signBtn.addEventListener("click", popUpGoogle, {once: true});
                   // console.log("did something")
-            }, 5000);
+            }, 3000);
 
       }).catch((error) => {
             // An error happened.
@@ -136,6 +139,8 @@ async function signOutProcess(){
 }
 onAuthStateChanged(auth, (user) => {
       if (user && signBtn) {    
+            const uName = document.querySelector("#name");
+            const uMail = document.querySelector("#email");
             signBtn.addEventListener("click", signOutProcess, {once: true});
             signBtn.lastElementChild.innerText = "Виходь!";
             setTimeout( () => {
@@ -160,11 +165,13 @@ onAuthStateChanged(auth, (user) => {
             }else if(hr > 21 || hr < 7){
                   welcomeName.innerText = `Доброї ночі, ${user.displayName}`;
             }
+            uName.value = user.displayName;
             welcomeEmail.innerText = `${user.email}`;
+            uMail.value = `${user.email}`;
             welcomeImg.src = user.photoURL;
             const uid = user.uid;
             if(uid == "TAjlQkwzQuP474H5wSZynTFIZ383"){
-                  welcomeRole.innerText = `адмін 80 рівня`;
+                  welcomeRole.innerText = `посилання на адмінку`;
                   welcomeRole.addEventListener("click", goToAdmin);
             }else{
                   welcomeRole.innerText = `учень 11 лвлу`;

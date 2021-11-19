@@ -53,34 +53,39 @@ if(document.querySelector(".submit_text")){
         const querySnapshot = await getDocs(q);
         let localBlock = 0;
         let localBlock2 = 0;
-        let localBox = 0;
+        let localBS = 0;
         async function showTheBook(e){
             const ref = this.ref;
             const index = this.index;
             // console.log(ref, index);
-            for(let i=0; i<ref.length && i<index.length; i++){
-                const box = document.querySelector(".libraryContent");
-                const clone = magicShelf.content.cloneNode(true);
-                box.append(clone);
-                const liSh = document.querySelectorAll(".book");
-                const shelfName = document.querySelectorAll("#shelfName");
-                const shelfSubject = document.querySelectorAll("#shelfSubject");
-                const shelfGrade = document.querySelectorAll("#shelfGrade");
-                const shelfLink = document.querySelectorAll("#shelfLink");
-                const aim = doc(db, "courses", ref[i]);
-                const myDoc = await getDoc(aim);
-                const name = myDoc.data().books[index[i]].name;
-                const parallel = myDoc.data().books[index[i]].parallel;
-                const subj = myDoc.data().books[index[i]].subject;
-                const link = myDoc.data().books[index[i]].link;
-                console.log(shelfName[i], i)
-                // liSh.id = localBox;
-                shelfName[i+ref.length].innerText = name;
-                shelfSubject[i+ref.length].innerText = parallel;
-                shelfGrade[i+ref.length].innerText = subj;
-                shelfLink[i+ref.length].innerText = link;
-                localBS;
+            if(this.boo){
+                this.boo = false;
+                for(let i=0; i<ref.length && i<index.length; i++){
+                    const box = document.querySelector(".libraryContent");
+                    const clone = magicShelf.content.cloneNode(true);
+                    box.append(clone);
+                    const shelfName = document.querySelectorAll("#shelfName");
+                    const shelfSubject = document.querySelectorAll("#shelfSubject");
+                    const shelfGrade = document.querySelectorAll("#shelfGrade");
+                    const shelfLink = document.querySelectorAll("#shelfLink");
+                    const aim = doc(db, "courses", ref[i]);
+                    const myDoc = await getDoc(aim);
+                    const name = myDoc.data().books[index[i]].name;
+                    const parallel = myDoc.data().books[index[i]].parallel;
+                    const subj = myDoc.data().books[index[i]].subject;
+                    const link = myDoc.data().books[index[i]].link;
+                    console.log(shelfName[i], i)
+                    // liSh.id = localBox;
+                    shelfName[localBS].innerText = name;
+                    shelfSubject[localBS].innerText = parallel;
+                    shelfGrade[localBS].innerText = subj;
+                    shelfLink[localBS].href = link;
+                    localBS++;
+                }                
+            }else{
+                // this.boo = true;
             }
+
 
         }
         await querySnapshot.forEach( (doc, index) => {
@@ -89,59 +94,59 @@ if(document.querySelector(".submit_text")){
                     // const li = document.createElement("li");
                     const clone = magicShelfS.content.cloneNode(true);
                     // console.log(grade[localBlock]);
-                    boxG.append(clone);
-                    setTimeout( () =>{
-                        
+                    boxG.append(clone);          
                     const magicShelfRow = document.querySelector("#magicShelfRow");
                     const grade = document.querySelectorAll("#magicShelfGrade");
-                            grade[localBlock].innerText = doc.data().books[0].parallel;
-                            // let sameSubjBook = 1;
-                            doc.data().books.forEach( (obj, index) =>{
-                                // console.log(localBlock)
-                                const clone = magicShelfRow.content.cloneNode(true);
-                                const box = document.querySelectorAll(".submenulibrary");
-                                box[localBlock].append(clone);
-                                // console.log(localBlock2)
-                                // localBlock2++;
-                                        const subjT = document.querySelectorAll("#magicBookPlace");
-                                        // console.log(subjT, localBlock2, index);
-                                        console.log(subjT)
-                                        console.log(obj.subject+localBlock)
-                                        subjT[localBlock2].innerText = obj.subject;
-                                        subjT[localBlock2].parentElement.id = obj.subject+localBlock;
-                                        // console.log(obj.subject+localBlock);
-                                        subjT[localBlock2].parentElement.addEventListener("click", showTheBook);
-                                        const sendData = subjT[localBlock2].parentElement;
-                                        // const sendRef = subjT[localBlock2].parentElement;
-                                        let bruh = [""];
-                                        bruh.push("b");
-                                        // let inner = index;
-                                        // console.log(localBlock2, "dont dare to repeat")
-                                        // console.log(subjT[localBlock2].parentElement.index, subjT[localBlock2].parentElement.refer)
-                                        // console.log(evilTwinObj)
-                                const evilTwinObj = document.querySelectorAll(`li[id="${obj.subject+localBlock}"]`);
+                    grade[localBlock].innerText = doc.data().books[0].parallel;
+                        // let sameSubjBook = 1;
+                        doc.data().books.forEach( (obj, index) =>{
+                            // console.log(localBlock)
+                            const clone = magicShelfRow.content.cloneNode(true);
+                            const box = document.querySelectorAll(".submenulibrary");
+                            box[localBlock].append(clone);
+                            // console.log(localBlock2)
+                            // localBlock2++;
+                            const subjT = document.querySelectorAll("#magicBookPlace");
+                            // console.log(subjT, localBlock2, index);
+                            console.log(subjT)
+                            console.log(obj.subject+localBlock)
+                            subjT[localBlock2].innerText = obj.subject;
+                            subjT[localBlock2].parentElement.id = obj.subject+localBlock;
+                            subjT[localBlock2].parentElement.boo = true;
+                            // console.log(obj.subject+localBlock);
+                            subjT[localBlock2].parentElement.addEventListener("click", showTheBook);
+                            console.log(subjT[localBlock2].parentElement.parentElement)
+                            subjT[localBlock2].parentElement.parentElement.parentElement.addEventListener("click", dropDown);
+                            const sendData = subjT[localBlock2].parentElement;
+                            // const sendRef = subjT[localBlock2].parentElement;
+                            let bruh = [""];
+                            bruh.push("b");
+                            // let inner = index;
+                            // console.log(localBlock2, "dont dare to repeat")
+                            // console.log(subjT[localBlock2].parentElement.index, subjT[localBlock2].parentElement.refer)
+                            // console.log(evilTwinObj)
+                            const evilTwinObj = document.querySelectorAll(`li[id="${obj.subject+localBlock}"]`);
 
-                                        if(evilTwinObj.length == 1){
-                                            // console.log(localBlock2 + "dont remove")
-                                            sendData.index = [index];
-                                            sendData.ref = [doc._key.path.segments[6]];
-                                            sendData.omegaIndex = localBlock;
-                                            localBlock2++;
-                                            // sameSubjBook++;
-                                        }else if(evilTwinObj.length > 1){
-                                            // console.log(localBlock2 + "remove")
-                                            // console.log("question")
-                                            evilTwinObj[evilTwinObj.length-1].remove();
-                                            evilTwinObj[evilTwinObj.length-2].index.push(index);
-                                            // evilTwinObj[evilTwinObj.length-2].omegaIndex.push(localBlock);
-                                            evilTwinObj[evilTwinObj.length-2].ref.push(doc._key.path.segments[6]);
-                                        }
+                                    if(evilTwinObj.length == 1){
+                                        // console.log(localBlock2 + "dont remove")
+                                        sendData.index = [index];
+                                        sendData.ref = [doc._key.path.segments[6]];
+                                        sendData.omegaIndex = localBlock;
+                                        localBlock2++;
+                                        // sameSubjBook++;
+                                    }else if(evilTwinObj.length > 1){
+                                        // console.log(localBlock2 + "remove")
+                                        // console.log("question")
+                                        evilTwinObj[evilTwinObj.length-1].remove();
+                                        evilTwinObj[evilTwinObj.length-2].index.push(index);
+                                        // evilTwinObj[evilTwinObj.length-2].omegaIndex.push(localBlock);
+                                        evilTwinObj[evilTwinObj.length-2].ref.push(doc._key.path.segments[6]);
+                                    }
 
 
-                                
-                            }); 
-                            localBlock++;                               
-                    }, 1000)
+                            
+                        }); 
+                        localBlock++;
 
             };
         
@@ -207,7 +212,7 @@ if(document.querySelector(".submit_text")){
             async function showSubjects(e){
                 const box = document.querySelector("#subjectOptGet");
                 const boxed = document.querySelectorAll("#subjectOptGet>option:not(:first-child)");
-                console.log(boxed);
+                // console.log(boxed);
                 for(let i=0; i<boxed.length; i++){
                     boxed[i].remove();
                 }
@@ -215,22 +220,36 @@ if(document.querySelector(".submit_text")){
                 if(this.selectedOptions[0].value == "-1"){
                     querySnapshot.forEach( doc =>{
                         doc.data().books.forEach( obj => {
-                            const option = document.createElement("option");
-                            // console.log(myDoc.data(), this.index);
-                            option.innerText = obj.subject;
-                            option.value = obj.subject;
-                            box.append(option);
+                            const evilTwinObj = box.querySelectorAll(`option[value="${obj.subject}"]`);
+                            if(!evilTwinObj[0]){
+                            // console.log(obj.subject)
+                                console.log(evilTwinObj)
+                                const option = document.createElement("option");
+                                // console.log(myDoc.data(), this.index);
+                                option.innerText = obj.subject;
+                                option.value = obj.subject;
+                                box.append(option);                                
+                            }else if(evilTwinObj.length > 1){
+                                console.log(evilTwinObj + "exist");
+                                evilTwinObj[evilTwinObj.length - 1].remove();
+                            }
                         });
                     });
                 }else{
                     const aimedOnTarget = doc(db, "courses", `${this.selectedOptions[0].refer}`);
                     const myDoc = await getDoc(aimedOnTarget);
                     myDoc.data().books.forEach( obj =>{
-                        const option = document.createElement("option");
-                        // console.log(myDoc.data(), this.index);
-                        option.innerText = obj.subject;
-                        option.value = obj.subject;
-                        box.append(option);
+                        const evilTwinObj = box.querySelectorAll(`option[value="${obj.subject}"]`);
+                        if(!evilTwinObj[0]){
+                            const option = document.createElement("option");
+                            // console.log(myDoc.data(), this.index);
+                            option.innerText = obj.subject;
+                            option.value = obj.subject;
+                            box.append(option);                            
+                        }else if(evilTwinObj.length > 1){
+                            console.log(evilTwinObj + "exist");
+                            evilTwinObj[evilTwinObj.length - 1].remove();
+                        }
                     });        
                 }
             
@@ -245,14 +264,34 @@ if(document.querySelector(".submit_text")){
             function clickCall(){
                 const box = document.querySelector(".magicWrapper");
                 const subj = document.querySelector("#subjectOptGet").selectedOptions[0].value;
-                const grade = Number(boxG.selectedOptions[0].value);
                 const ref = boxG.selectedOptions[0].refer;
-                while (box.firstChild) {
-                    box.removeChild(box.lastChild);
+                if(ref){
+                    const grade = Number(boxG.selectedOptions[0].value);
+                    while (box.firstChild) {
+                        box.removeChild(box.lastChild);
+                    }
+                    getBooks(grade, subj, ref);
+                }else{
+                    window.alert("Оберіть клас та поле")
                 }
-                getBooks(grade, subj, ref);
+
             }
-            let boo = false;
+            // let boo = false;
+            async function deleteBook(){
+                const doc = this.parentElement.ref;
+                const index = this.parentElement.index;
+                const myDoc = await getDoc(doc);
+                // const budgets = arrayOfBudget.map((obj)=> {return Object.assign({}, obj)});
+                await updateDoc(doc, {
+                    books: arrayRemove({
+                        name: this.parentElement.bookName,
+                        link: this.parentElement.bookLink, 
+                        subject: this.parentElement.bookSubject, 
+                        parallel: this.parentElement.bookParallel
+                    })
+                 });
+                 this.parentElement.remove();
+            }
             async function getBooks(gradeIn, subjectIn, ref){
                 let global = 0;
             
@@ -271,6 +310,13 @@ if(document.querySelector(".submit_text")){
                             const grade = document.querySelectorAll("#magicBookGrade");
                             const subject = document.querySelectorAll("#magicBookSubject");
                             const link = document.querySelectorAll("#magicBookLink");
+                            name[global].parentElement.parentElement.ref = aim;
+                            name[global].parentElement.parentElement.index = index;
+                            name[global].parentElement.parentElement.bookName = obj.name;
+                            name[global].parentElement.parentElement.bookParallel = obj.parallel;
+                            name[global].parentElement.parentElement.bookSubject = obj.subject;
+                            name[global].parentElement.parentElement.bookLink = obj.link;
+                            document.querySelectorAll(".deleteBook")[global].addEventListener("click", deleteBook);
                             name[global].innerText = obj.name;
                             grade[global].innerText = obj.parallel;
                             subject[global].innerText = obj.subject;
@@ -289,7 +335,14 @@ if(document.querySelector(".submit_text")){
                             const grade = document.querySelectorAll("#magicBookGrade");
                             const subject = document.querySelectorAll("#magicBookSubject");
                             const link = document.querySelectorAll("#magicBookLink");
-                            console.log(name, index);
+                            // console.log(name, index);
+                            name[global].parentElement.parentElement.ref = aim;
+                            name[global].parentElement.parentElement.index = index;
+                            name[global].parentElement.parentElement.bookName = obj.name;
+                            name[global].parentElement.parentElement.bookParallel = obj.parallel;
+                            name[global].parentElement.parentElement.bookSubject = obj.subject;
+                            name[global].parentElement.parentElement.bookLink = obj.link;
+                            document.querySelectorAll(".deleteBook")[global].addEventListener("click", deleteBook);
                             name[global].innerText = obj.name;
                             grade[global].innerText = obj.parallel;
                             subject[global].innerText = obj.subject;
@@ -297,6 +350,7 @@ if(document.querySelector(".submit_text")){
                             global++;
                     });
                 }else if(gradeIn == -1 && subjectIn != "00"){
+                    const aim = doc(db, "courses", ref);
                     querySnapshot.forEach( doc => {
                             doc.data().books.filter( obj => obj.subject == subjectIn)
                             .forEach( (obj,index) =>{
@@ -308,6 +362,13 @@ if(document.querySelector(".submit_text")){
                                 const grade = document.querySelectorAll("#magicBookGrade");
                                 const subject = document.querySelectorAll("#magicBookSubject");
                                 const link = document.querySelectorAll("#magicBookLink");
+                                name[global].parentElement.parentElement.ref = aim;
+                                name[global].parentElement.parentElement.index = index;
+                                name[global].parentElement.parentElement.bookName = obj.name;
+                                name[global].parentElement.parentElement.bookParallel = obj.parallel;
+                                name[global].parentElement.parentElement.bookSubject = obj.subject;
+                                name[global].parentElement.parentElement.bookLink = obj.link;
+                                document.querySelectorAll(".deleteBook")[global].addEventListener("click", deleteBook);
                                 name[global].innerText = obj.name;
                                 grade[global].innerText = obj.parallel;
                                 subject[global].innerText = obj.subject;
@@ -316,6 +377,7 @@ if(document.querySelector(".submit_text")){
                         });
                     });
                 }else if(gradeIn == -1 && subjectIn == "00"){
+                    const aim = doc(db, "courses", ref);
                     querySnapshot.forEach( doc => {
                             doc.data().books.forEach( (obj,index) =>{
                                 const temp = document.querySelector("#magicBook");
@@ -326,6 +388,14 @@ if(document.querySelector(".submit_text")){
                                 const grade = document.querySelectorAll("#magicBookGrade");
                                 const subject = document.querySelectorAll("#magicBookSubject");
                                 const link = document.querySelectorAll("#magicBookLink");
+
+                            name[global].parentElement.parentElement.ref = aim;
+                            name[global].parentElement.parentElement.index = index;
+                            name[global].parentElement.parentElement.bookName = obj.name;
+                            name[global].parentElement.parentElement.bookParallel = obj.parallel;
+                            name[global].parentElement.parentElement.bookSubject = obj.subject;
+                            name[global].parentElement.parentElement.bookLink = obj.link;
+                            document.querySelectorAll(".deleteBook")[global].addEventListener("click", deleteBook);
                                 console.log(name[global], index);
                                 name[global].innerText = obj.name;
                                 grade[global].innerText = obj.parallel;

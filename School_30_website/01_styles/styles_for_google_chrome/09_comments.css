@@ -188,19 +188,25 @@ input{
 }
 
 .submitBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: color var(--transitionFast), border 0.1s;
     width: 100%;
-    height: 50px;
+    min-height: 50px;
+    padding: 10px 10px;
     background-color: var(--lightdarkblue);
     color: var(--lightblue);
     font-weight: 600;
     font-size: 24px;
     cursor: pointer;
-    border: 2px solid var(--lightblue);
+    border: 3px solid var(--lightblue);
+    /* margin: 2px; */
 }
 .submitBtn:hover{
     color: var(--blue);
-    border: 4px solid var(--blue)
+    border: 3px solid var(--blue);
+    /* margin: 0px; */
 }
 /* форма */
 /* форма */
