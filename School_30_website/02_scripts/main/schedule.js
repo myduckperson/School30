@@ -21,14 +21,3 @@ function showTable(e){
    }
 
 }
-// async function showTable(e){
-//     const currentIndex = e.currentTarget.index;
-//     const showTablePromise = new Promise( resolve => {
-//         tables[currentIndex].style.display = "initial";
-//         resolve();
-//     });
-//     showTablePromise.then( ()=>{
-//         setTimeout( () => {tables[currentIndex].firstElementChild.style.opacity = 1;}, 0)
-        
-//     });
-// }

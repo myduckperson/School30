@@ -6,7 +6,10 @@ body{
     display: flex;
     justify-content: space-around;
 }
-
+.adminNavItems{
+    border:2px solid var(--blue);
+    cursor: pointer;
+}
 
 /* Коменти */
 /* Коменти */

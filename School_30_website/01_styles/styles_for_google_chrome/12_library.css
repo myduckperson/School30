@@ -213,6 +213,8 @@
 }
 /* фотографія */
 .libraryContent img{
+    flex: 1 0 0;
+    padding-left: 30px;
     max-width: 200px;
     height: 100%;
     margin: auto;
@@ -223,6 +225,7 @@
 .libraryContent>li>div>div:last-child{
     /* height: 220px; */
     /* width: 59%; */
+    flex: 2 0 0;
     padding: 20px;
     overflow-y: auto;
 }

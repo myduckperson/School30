@@ -34,8 +34,6 @@
                     <div>
                         <label>Клас :</label>
                         <select id="gradeOpt" class="gradeOpt" name="grades">
-                            <!-- <option value="00" name="1 клас">class</option>
-                            <option value="01" name="2 клас">classBruh</option> -->
                         </select>
                     </div>
                     <div>
@@ -90,18 +88,11 @@
                     <div>
                         <h1>Отримання підручників</h1>
                     </div>
-                    <!-- <div>
-                        <label>Ім'я :</label>
-                        <input type="text" id="libraryBookName">
-                    </div> -->
                     <div>
                         <label>Клас :</label>
                         <select id="gradeOptGet" class="gradeOpt" name="gradesGet">
                             <option value="null" selected="selected">Оберіть клас</option>
                             <option value="-1">Усі класи</option>
-                            <!-- <option>1 клас</option>
-                            <option>2 клас</option>
-                            <option>3 клас</option> -->
                         </select>
                     </div>
                     <div>
@@ -109,19 +100,8 @@
                         <select id="subjectOptGet" name="subjectsGet">
                             <option value="null" selected="selected">Оберіть предмет</option>
                             <option value="00">Усі предмети</option>
-                            <!-- <option>Математика</option>
-                            <option>Інформатика</option>
-                            <option>Англійська мова</option> -->
                         </select>
                     </div>
-                    <!-- <div>
-                        <label>Посилання :</label>
-                        <input type="text" id="libraryBookLink">
-                    </div> -->
-                    <!-- <div>
-                        <label>Зображення (не обов'язково) :</label>
-                        <input type="file" id="libraryBookPhoto">
-                    </div> -->
                     <input type="button" id="getBooksNow" value="Відобразити наявні книжки">      
                 </form>
                 <div id="magicBox">
@@ -154,71 +134,8 @@
                 </div>
         </section>
     <section class="comments CM" id="comments">
-        <div class="info_title">
-            <h1>Зворотній зв'язок</h1>
-        </div>
         <section class="commentsContent">
             <div class="comments_wrapper">
-                <!-- <form class="usersData">
-                    <div class="uName">
-                        <label>Прізвище Імʼя:</label>
-                        <input type="text" id="name">
-                        <div class="sticky"><img id="stickyImg"></div>
-                    </div>
-                    <div class="mail">
-                        <label>Електронна пошта:</label>
-                        <input type="text" id="email">
-                    </div>
-                    <div class="message">
-                        <label>Ваше повідомлення:</label>
-                        <div class="date">
-                            <label>Дата:</label>
-                            <input id="localDate" type="date" value="2020-11-08" disabled>
-                            <label>Час:</label>
-                            <input id="localTime" type="datetime" value="23:23:23" disabled>
-                        </div>
-                        <input type="text" id="message">
-                    </div>
-                    Зірки
-                    <div class="stars">
-                        <div class="star star0 starID">
-                            <div class="starV0"></div>
-                            <div class="starV1"></div>
-                            <div class="starV2"></div>
-                            <div class="starV3"></div>
-                            <div class="starV4"></div>
-                        </div>
-                        <div class="star star1 starID">
-                            <div class="starV0"></div>
-                            <div class="starV1"></div>
-                            <div class="starV2"></div>
-                            <div class="starV3"></div>
-                            <div class="starV4"></div>
-                        </div>
-                        <div class="star star2 starID">
-                            <div class="starV0"></div>
-                            <div class="starV1"></div>
-                            <div class="starV2"></div>
-                            <div class="starV3"></div>
-                            <div class="starV4"></div>
-                        </div>
-                        <div class="star star3 starID">
-                            <div class="starV0"></div>
-                            <div class="starV1"></div>
-                            <div class="starV2"></div>
-                            <div class="starV3"></div>
-                            <div class="starV4"></div>
-                        </div>
-                        <div class="star star4 starID">
-                            <div class="starV0"></div>
-                            <div class="starV1"></div>
-                            <div class="starV2"></div>
-                            <div class="starV3"></div>
-                            <div class="starV4"></div>
-                        </div>
-                    </div>
-                    <button id="submitBtn" class="submitBtn" type="button">Відправити</button>
-                </form> -->
                 <div class="comments_content">
                     <h1>Коментарі користувачів</h1>
                     <form class="chooseComments">
@@ -238,7 +155,7 @@
                             <input type="radio" name="cm" value="4" id="remove">
                             <label>Сховати коментарі</label>
                         </div>
-                        <input type="button" id="chooseComments" value="Підтвердіть вибір">
+                        <input type="button" id="chooseComments" value="Показати комментарі">
                     </form>
                     <div class="wrapper_comments">
                         <div class="comments_container" id="boxC">
@@ -321,7 +238,7 @@
                                             </div>
                                         </button>
                                         <button class="approve">
-                                            Галочка
+                                            Затвердити
                                         </button>
                                     </div>
                                 </article>

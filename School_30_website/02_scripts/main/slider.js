@@ -47,148 +47,19 @@ const dots = document.querySelectorAll('.dot');
 // //королівство змінних
 // //королівство змінних
 
-// Королівство коду сироти
-// Королівство коду сироти
-
-// // слухає кліки на бургер кнопку та тінь меню 
-// bm.addEventListener('click', mainCall);
-// hb.addEventListener('click', mainCall);
-// // слухає кліки на кнопки підменю 
-// for(i=0; i<buttons.length; i++){
-
-//     buttons[i].addEventListener("click", show);
-//     // передає індекс натиснутої кнопки
-//     buttons[i].index = i;
-// }
-
-// // створює слайди 
-// createSlide(path0);
-// createSlide(path1);
-// createSlide(path2);
-
-// // викликає функцію
-// // const sliderCounter = document.querySelectorAll(".sliderID");
-// // sliderCounter.forEach( (sliderObj, index) =>{
-// //     let sliderID = sliderObj.id;
-// //     createSlide(sliderID);   
-// // } );
-
-// // слухає кліки на кнопки слайдеру
-// for(i=0;i < nextBtn.length && i < prevBtn.length; i++){
-//     nextBtn[i].addEventListener("click", next);
-//     // console.log(nextBtn[i]);
-//     nextBtn[i].index = i;
-//     prevBtn[i].addEventListener("click", prev);    
-//     prevBtn[i].index = i;
-// }
-
-
-// слухає кліки на точки слайдеру
-// for(i=0 ; i<dots.length; i++){
-//     dots[i].addEventListener("click", dotBtn);
-//     dots[i].index = i;
-// }
-
-// створює точки
-// createTheDots();
-
-// Королівство коду сироти
-// Королівство коду сироти
-
-// ASLP - Automatic Slide Loading Platform, автоматична платформа завантаження слайдів (власного виробництва)
-
-// function createSlide(path){
-//     const slideP = document.createElement("div");
-//     const slideIn = slider.appendChild(slideP);
-//     const slideC = document.createElement("img");
-//     const slideInP = slideP.appendChild(slideC); 
-//     // додає клас до всіх слайдів
-//     // slideP.className = "slide_container";
-//     if(slideIn.previousElementSibling == null){
-//         // якщо сусідній зверху слайд відсутній (тобто це перший слайд) надає клас currentID
-//         slideP.classList.add("currentID");
-//     }
-//     // конструкція зображень
-//     slideC.setAttribute("src", `sources/${path}/slide${sIndex}.jpg`);
-//     slideC.index = sIndex;
-//     slideC.addEventListener("error", png, {once : true} );
-//     slideC.addEventListener("load", createSlide);
-//     // компонування усього компоту об'єктів
-//     slideInP;
-//     slideIn;
-//     // додавання 1 до індексу слайда
-//     sIndex++;
-// }
-
-// // підтримка 7 форматів зображень (можливо збільшити список, але це не має сенсу)
-// function png(){
-//     // this.removeEventListener("error", png);
-//     this.addEventListener("error", gif, {once : true} );
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.png`)
-// }
-// function gif(){
-//     // this.removeEventListener("error", gif);
-//     this.addEventListener("error", apng, {once : true} );
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.gif`)
-// }
-// function apng(){
-//     // this.removeEventListener("error", apng);
-//     this.addEventListener("error", avif, {once : true} );
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.apng`)
-// }
-// function avif(){
-//     // this.removeEventListener("error", avif);
-//     this.addEventListener("error", svg, {once : true} );
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.avif`)
-// }
-// function svg(){
-//     // this.removeEventListener("error", svg);
-//     this.addEventListener("error", webp, {once : true} );
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.svg`)
-// }
-// function webp(){
-//     // this.removeEventListener("error", webp);
-//     this.addEventListener("error", removeYourself);
-//     // this.addEventListener("load", createSlide);
-//     this.setAttribute("src", `img/slides/slide${this.index}.webp`)
-// }
-// // із-за того, що подія помилки відбувається тільки коли картинка уже створена,
-// // створюється на один слайд більше ніж потрібно, тут він знищується
-// function removeYourself(){
-//     this.remove();
-//     const boxSl = document.querySelectorAll(".slide_container");
-//     // boxSl[boxSl.length-1].remove();     
-//     createTheDots();
-//     // console.clear();
-// }
-
-// SAS - Slide Animation Sector, сектор анімації слайдів
+// сектор анімації слайдів
 
 // на клік кнопки ">" анімація зміни слайдів 
 
 function next(e){
-    // console.log(bm)
-    // const allSlides = e.currentTarget.nextElementSibling.children;
     const index = e.currentTarget.index;
-    // console.log( e.currentTarget);
-    // const allSlides = document.querySelectorAll('.slide_container').length;
-    // на випадок того, що не всі слайди завантаженні (проблема із-за опори на карент айді)
-   
-    const current = e.currentTarget.nextElementSibling.querySelector(".currentID");
 
-    // console.log(current)
+    const current = e.currentTarget.nextElementSibling.querySelector(".currentID");
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
     const nextS = current.nextElementSibling;
     const prevS = current.previousElementSibling;
     const firstC = current.parentElement.firstElementChild;
     const lastC = current.parentElement.lastElementChild;
-
-    // деактивує інтерактивні елементи слайдеру для уникнення помилок
     disableBtns();
     if(prevS == null){
         lastC.classList.remove("currentOutToLeft");  
@@ -218,14 +89,11 @@ function next(e){
         nextS.classList.remove("currentOutToRight");
         nextS.style.display = displayV; 
         setTimeout(function(){ nextS.classList.add("nextInToLeft"); }, 0);
-        // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!!       
         slideIteration++;
     }
     if(current.parentElement.id == "special"){
         dotsGo(slideIteration);
-        // console.log("dots")
     }
-    // console.log("dots" + index)
 }
 
 // на клік кнопки "<" анімація зміни слайдів 
@@ -233,9 +101,7 @@ function prev(e){
     const allSlides = e.currentTarget.previousElementSibling.children;
     console.log(allSlides)
     const index = e.currentTarget.index;
-    // const allSlides = document.querySelectorAll('.slide_container').length;
     const current = e.currentTarget.previousElementSibling.querySelector(".currentID");
-    // console.log(current);
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
     const nextS = current.nextElementSibling;
     const prevS = current.previousElementSibling;
@@ -260,8 +126,6 @@ function prev(e){
         lastC.classList.remove("currentOutToLeft");
         lastC.style.display = displayV; 
         setTimeout(function(){ lastC.classList.add("prevInToRight"); }, 0);
-        // console.log(allSlides.length);
-        // console.log(slideIteration + "reseting point")
         slideIteration = allSlides.length-1;
     }else{
         prevS.style.zIndex = -1; 
@@ -270,41 +134,22 @@ function prev(e){
         prevS.classList.remove("currentOutToLeft");
         prevS.style.display = displayV; 
         setTimeout(function(){ prevS.classList.add("prevInToRight"); }, 0);
-        // MIGHT BE ERROR HERE!!!!!!!!!!!!!!!!!!! 
-        // console.log(slideIteration)
         slideIteration--;      
     }
     if(current.parentElement.id == "special"){
-        // console.log(allSlides.length);
         dotsGo(slideIteration, allSlides.length);
-        // console.log("dots")
     }
-    // dotsGo(slideIteration);
 }
 
 
-// KNDAS - Keeping Needed Dots Active System, система утримання потрібний кнопок активними 
+//  система утримання потрібних кнопок активними 
 
 function dotsGo(slideIteration, slides){
-    // console.log(slideIteration)
-
     const dots = document.querySelectorAll('.dot');
     for(i=0; i < dots.length; i++){
         dots[i].classList.remove("active");
     }
-    // console.log(slideIteration +" who resets you")
     dots[slideIteration].classList.toggle("active");
-    // console.log(slideIteration)
-        // if(dots[slideIteration+1] == undefined){
-        //     dots[0].classList.remove("active");
-        // }else{
-        //     dots[slideIteration+1].classList.remove("active");
-        // }
-        // if(dots[slideIteration-1] == undefined){
-        //     dots[dots.length-1].classList.remove("active");
-        // }else{
-        //     dots[slideIteration-1].classList.remove("active");
-        // }  
 }
 
 // реалізація точок кнопок
@@ -317,9 +162,6 @@ function dotBtn(e){
     const displayV = window.getComputedStyle(current).getPropertyValue('display');
 
     disableBtns();
-    // slideIteration = dotIn;
-    // console.log(slideIteration)
-    // current.classList.add("currentOutToLeft");
     if(slideIteration !== dotIn){        
         current.style.zIndex = -1;
         current.style.opacity = 0; 
@@ -330,15 +172,11 @@ function dotBtn(e){
         },1000);
         slides[dotIn].style.display = displayV;
     }
-
-    // setTimeout(function(){ slides[dotIn].classList.add("nextInToLeft", "currentID");},0);  
     if(slideIteration < dotIn){
     
         slides[dotIn].style.zIndex = -1;
         slides[dotIn].style.opacity = 0; 
         current.classList.add("currentOutToLeft");
-        // slides[dotIn].style.zIndex = 1;
-        // slides[dotIn].style.opacity = 0; 
         setTimeout(function(){
             slides[dotIn].classList.add("nextInToLeft", "currentID");
         },0); 
@@ -354,7 +192,6 @@ function dotBtn(e){
     dotsGo(slideIteration);
 }
 
-// деактивує точки на 1 секунду (час анімації) 
 
 function disableBtns(){
     for(i=0;i < nextBtn.length && i < prevBtn.length; i++){
@@ -363,10 +200,6 @@ function disableBtns(){
         prevBtn[i].setAttribute("disabled", "");  
         setTimeout(function(i){prevBtn[i].removeAttribute("disabled"); }, spdSlow, i);  
     }
-    // nextBtn.setAttribute("disabled", "");
-    // setTimeout(function(){nextBtn.removeAttribute("disabled"); }, spdSlow);
-    // prevBtn.setAttribute("disabled", "");
-    // setTimeout(function(){prevBtn.removeAttribute("disabled"); }, spdSlow);
     const dots = document.querySelectorAll('.dot');
     for(i=0; i<dots.length; i++){
         dots[i].style.pointerEvents = "none";
@@ -374,16 +207,11 @@ function disableBtns(){
     }
 }
 
-// ADAS - Automatic Dots Adding System, автоматична система додавання кнопок
+//  автоматична система додавання кнопок
 // додає  кнопоки у відповідність кіькості слайдів 
 
 function createTheDots(){
-
-    // const dotsCT = document.querySelector('.dots');
-    // const dot = document.createElement("div");
-    // console.log("over Here")
     const allSl = document.querySelector('.slider_content').children;
-    // console.log(allSl.length)
     for(i=0; i < allSl.length; i++){
         const dotsCT = document.querySelector('.dots');
         const dot = document.createElement("div");
@@ -405,17 +233,3 @@ function createTheDots(){
 
 
 
-// debug
-// debug
-// debug
-// debug
-// debug
-// debug
-// debug
-
-
-document.getElementById("news1").addEventListener("click", debugMe)
-function debugMe(e){
-    const current = document.querySelectorAll('.currentID');
-    console.log(this)
-}
