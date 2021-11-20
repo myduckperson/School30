@@ -294,6 +294,8 @@ input{
         z-index: 1;
     }
     .li_title{
+        cursor: pointer;
+        color: var(--gray);
         --lightblue: rgba(102, 252, 242, 0.05);
         display: block;
         height: 100%;
@@ -304,6 +306,9 @@ input{
         margin-right: 40px;
         transition: var(--transitionFast);
         background-color: var(--lightblue);
+    }
+    .li_title:last-child{
+        margin-right: 0px;
     }
     .li_title:hover {
         padding-left: 40px;
