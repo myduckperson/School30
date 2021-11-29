@@ -98,8 +98,8 @@
     transform: translate(0px, -50%) scale(50%) rotate(180deg);
 }
 .sidebarLibraryContent>div>li>ol{
+    cursor: pointer;
     position: absolute;
-    counter-increment: calibration;  
     top: 0px;
     /* display: none; */
     /* overflow: hidden; */
