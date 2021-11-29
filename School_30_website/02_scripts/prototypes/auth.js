@@ -98,7 +98,7 @@ onAuthStateChanged(auth, (user) => {
                   welcomeRole.innerText = `посилання на адмін панель`;
                   welcomeRole.addEventListener("click", goToAdmin);
             }else{
-                  welcomeRole.innerText = `учень 11 лвлу`;
+                  welcomeRole.innerText = `учень`;
             }
       } else {
       }
