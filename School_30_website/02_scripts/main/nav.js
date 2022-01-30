@@ -38,7 +38,6 @@ function show(event){
     const daughters = event.currentTarget.lastElementChild.firstElementChild.children;
     // шукає настопного наступного дядька (брат батька)
     const subUl = event.currentTarget.nextElementSibling;
-    console.log(daughters)
     if(this.avarageHeight){
         modifier = this.avarageHeight;
     }else{
@@ -53,7 +52,6 @@ function show(event){
     if(subUl.style.display === "block"){
         // для анімації +/- знімає клас "optnLines" з смужок плюса
         for(i = 0; i<2; i++){
-            console.log(daughters)
             daughters[i].classList.remove("openLines");
         }
         // підменю зникає
@@ -62,14 +60,11 @@ function show(event){
     }else{
         // для анімації +/- додає клас "optnLines" смужокам плюса
         for(i = 0; i<2; i++){
-            console.log(daughters[i])
             daughters[i].classList.add("openLines");
         }
         // підменю з'являється
         subUl.style.display = "block";
         setTimeout(function(){subUl.style.maxHeight = `${heightMult}px`}, 0);
-            // MAIGHT BE ERROR HERE
-
     }
 }
 
@@ -82,16 +77,14 @@ document.getElementById("style_dark").addEventListener('change', setStyleDark)
 document.getElementById("style_light").addEventListener('change', setStyleLight)
 
 function setStyleDark() {
-    console.log("DARK")
+    //("DARK")
     document.getElementById("link_color_light").setAttribute("disabled","");
     document.getElementById("link_color_dark").removeAttribute("disabled");
     document.getElementById("teachersContent").style.backgroundImage="http://30.zosh.zt.ua/wp-content/uploads/2018/09/IMG_20180901_092019.jpg";
 }
 
 function setStyleLight() {
-    console.log("LIGHT")
+    //("LIGHT")
     document.getElementById("link_color_dark").setAttribute("disabled","");
     document.getElementById("link_color_light").removeAttribute("disabled");
-   // document.getElementById("teachersContent").setAttribute("style", "background-image: url("https://firebasestorage.googleapis.com/v0/b/progress-7027e.appspot.com/o/03_teachers%2F_fonLight.PNG?alt=media&token=de2d01b2-3bf7-453d-93db-1216ebaf2976");");
-
 }

@@ -1,22 +1,8 @@
-/// dont even consider stopping
-
-
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
 import { getAuth,signInWithPopup ,GoogleAuthProvider , onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import { getFirestore, deleteDoc, updateDoc, collection, addDoc, getDocs, doc, getDoc, Timestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
-// import { getFirestore } from "firebase/firestore";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCJG8mkkPamGQ36RaXs62fJUqhOrY7dJ2A",
@@ -41,7 +27,7 @@ document.querySelectorAll("#radio").forEach( obj =>{
       obj.addEventListener("click", setChecked);
 });
 function setChecked(){
-      console.log("checked")
+      //("checked")
       this.firstElementChild.checked = true;
 }
 
@@ -66,7 +52,6 @@ if(!chosen){
       const all = document.querySelector("#All");
       chosen.addEventListener("click", refresh);
 }
-// console.log("bruh")
 function setDateToInput(){
       const dataHolder = document.querySelector("#localDate");
       let yourDate = new Date()
@@ -181,7 +166,6 @@ async function showIt(answerValue){
                   checker = 4;
             }
       }else{
-            console.log("failer");
             checker = true;
       }
   querySnapshot.forEach((doc) => {
@@ -190,8 +174,6 @@ async function showIt(answerValue){
               var template = document.querySelector("#comTemp");
               var clone = template.content.cloneNode(true);
               var box = document.querySelector("#boxC");
-              console.log(doc._key.path.segments)
-              console.log(template.content.firstElementChild)
               box.appendChild(clone);  
               const uNameC = document.querySelectorAll("#usersNameComment");
               const uMailC = document.querySelectorAll("#usersMailComment");
@@ -210,7 +192,6 @@ async function showIt(answerValue){
               const uDateC = document.querySelectorAll("#usersDateComment");
               const uTimeC = document.querySelectorAll("#usersTimeComment");
               const stars = document.querySelectorAll(".starIDC");
-              console.log(uNameC, i);
               uNameC[i].omegaId = doc._key.path.segments[6];
               let br = doc.data().date.toDate();
               const offset = new Date().getTimezoneOffset();
@@ -230,7 +211,6 @@ async function showIt(answerValue){
                   stars[f].classList.add("activeStable");
               }
               i++;
-              console.log(i);
           }).then( () => {
               var box = document.querySelector("#boxC");
                 if(box.childElementCount == 0){
@@ -246,7 +226,6 @@ async function showIt(answerValue){
   const approve = document.querySelectorAll(".approve");
   const deleteC = document.querySelectorAll(".delete");
   approve.forEach( (obj, index) =>{
-        console.log(obj);
         obj.addEventListener("click", approveComment);
         obj.index = index;
   });
@@ -254,7 +233,6 @@ async function showIt(answerValue){
         obj.addEventListener("click", deleteComment);
         obj.index = index;
   });
-  console.log("answer")
 }
 
 // адмінка
@@ -267,12 +245,8 @@ async function showIt(answerValue){
 // адмінка
 
 async function approveComment(e){
-      console.log("something")
       const targetApprovel = this.parentElement.previousElementSibling.previousElementSibling.firstElementChild.firstElementChild.omegaId;
-      console.log(targetApprovel)
       const aimedOnTarget = doc(db, "comments", `${targetApprovel}`);
-
-      // Set the "capital" field of the city 'DC'
       await updateDoc(aimedOnTarget, {
         approve: true
       });

@@ -1,18 +1,7 @@
-// Зміст коду
-// 1.------Королівство змінних(з 5 по 33 рядок)
-// 2.------Королівство коду сиріти(з 35 по 66 рядок) 
-// 3.------Власне сам код(з 69 по 422 рядок)
-// 3.1 -------MHSS(Menu Hiding && Showing System)
-// 3.2 -------SHSS(Submenu Hiding && Showing System)
-// 3.3 -------ASLP(Automatic Slide Loading Platform)
-// 3.4 -------SAS(Slide Animation Sector)
-// 3.5 -------KNDAS(Keeping Needed Dots Active System)
-// 3.6 -------ADAS(Automatic Dots Adding System)
 
 
 
-// Королівство змінних
-// Королівство змінних
+
 // Шлях до контенту
 const thePath = "../03_sources/";
 // швидкість анімації/переходів

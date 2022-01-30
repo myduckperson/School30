@@ -1,7 +1,6 @@
 const scheduleHeaders = document.querySelectorAll(".menuItemHeader");
 scheduleHeaders.forEach( obj =>{
     obj.addEventListener("click", show)
-    // obj.index = objIndex;
 }); 
 const checker = document.querySelectorAll(".checker");
 checker.forEach( (obj, objIndex) =>{

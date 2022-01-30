@@ -1,7 +1,4 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
-// import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-analytics.js";
-// import { getAuth,signInWithPopup ,GoogleAuthProvider , onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js"; 
 import { getFirestore, arrayUnion, arrayRemove, updateDoc, collection, getDocs, doc, getDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 
@@ -43,7 +40,7 @@ if(document.querySelector(".submit_text")){
         // const magicShelfRow = document.querySelector("#magicShelfRow");
         const magicShelf = document.querySelector("#magicShelf");
         const q = query(collection(db, "courses"), orderBy("gradeNumber", "asc"));
-        // console.log("?s")
+        // //("?s")
         const querySnapshot = await getDocs(q);
         let localBlock = 0;
         let localBlock2 = 0;
@@ -51,7 +48,7 @@ if(document.querySelector(".submit_text")){
         async function showTheBook(e){
             const ref = this.ref;
             const index = this.index;
-            // console.log(ref, index);
+            // //(ref, index);
             if(this.boo){
                 this.boo = false;
                 for(let i=0; i<ref.length && i<index.length; i++){
@@ -68,19 +65,14 @@ if(document.querySelector(".submit_text")){
                     const parallel = myDoc.data().books[index[i]].parallel;
                     const subj = myDoc.data().books[index[i]].subject;
                     const link = myDoc.data().books[index[i]].link;
-                    console.log(shelfName[i], i)
-                    // liSh.id = localBox;
+
                     shelfName[localBS].innerText = name;
                     shelfSubject[localBS].innerText = parallel;
                     shelfGrade[localBS].innerText = subj;
                     shelfLink[localBS].href = link;
                     localBS++;
                 }                
-            }else{
-                // this.boo = true;
             }
-
-
         }
         await querySnapshot.forEach( (doc, index) => {
             if(doc.data().books[0]){
@@ -99,7 +91,6 @@ if(document.querySelector(".submit_text")){
                             subjT[localBlock2].parentElement.id = obj.subject+localBlock;
                             subjT[localBlock2].parentElement.boo = true;
                             subjT[localBlock2].parentElement.addEventListener("click", showTheBook);
-                            console.log(subjT[localBlock2].parentElement.parentElement)
                             subjT[localBlock2].parentElement.parentElement.parentElement.addEventListener("click", dropDown);
                             const sendData = subjT[localBlock2].parentElement;
                             const evilTwinObj = document.querySelectorAll(`li[id="${obj.subject+localBlock}"]`);
@@ -131,7 +122,6 @@ if(document.querySelector(".submit_text")){
                 obj.addEventListener("click", showMeTheSection);
             });
             function showMeTheSection(e){
-                console.log(`.${this.firstElementChild.id}`)
                 navs.forEach( obj =>{
                     document.querySelector(`.${obj.firstElementChild.id}`).style.display = "none";
                 });
@@ -177,13 +167,11 @@ if(document.querySelector(".submit_text")){
                         doc.data().books.forEach( obj => {
                             const evilTwinObj = box.querySelectorAll(`option[value="${obj.subject}"]`);
                             if(!evilTwinObj[0]){
-                                console.log(evilTwinObj)
                                 const option = document.createElement("option");
                                 option.innerText = obj.subject;
                                 option.value = obj.subject;
                                 box.append(option);                                
                             }else if(evilTwinObj.length > 1){
-                                console.log(evilTwinObj + "exist");
                                 evilTwinObj[evilTwinObj.length - 1].remove();
                             }
                         });
@@ -199,7 +187,6 @@ if(document.querySelector(".submit_text")){
                             option.value = obj.subject;
                             box.append(option);                            
                         }else if(evilTwinObj.length > 1){
-                            console.log(evilTwinObj + "exist");
                             evilTwinObj[evilTwinObj.length - 1].remove();
                         }
                     });        
@@ -346,7 +333,6 @@ if(document.querySelector(".submit_text")){
                                 name[global].parentElement.parentElement.bookSubject = obj.subject;
                                 name[global].parentElement.parentElement.bookLink = obj.link;
                                 document.querySelectorAll(".deleteBook")[global].addEventListener("click", deleteBook);
-                                console.log(name[global], index);
                                 name[global].innerText = obj.name;
                                 grade[global].innerText = obj.parallel;
                                 subject[global].innerText = obj.subject;
