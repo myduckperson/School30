@@ -33,11 +33,9 @@ const auth = getAuth(app);
 const user = auth.currentUser;
 
 const provider = new GoogleAuthProvider();
-console.log(window.location.href);
 const signBtn = document.querySelector("#signInAndOut");
 if(!user){
       signBtn.addEventListener("click", popUpGoogle, {once: true}); 
-      console.log(document.innerHTML)     
 }
 
 async function popUpGoogle(){
@@ -48,11 +46,7 @@ const welcomeName = document.querySelector("#welcomeName");
 const welcomeEmail = document.querySelector("#welcomeEmail");
 const welcomeRole = document.querySelector("#welcomeRole");
 const welcomeImg = document.querySelector("#welcomeImg");
-onAuthStateChanged(auth, user =>{
-if(!user && !alert){
-            popUpGoogle()
-      }
-});
+
 
 async function signOutProcess(){
       signOut(auth).then(() => {
@@ -67,6 +61,9 @@ async function signOutProcess(){
       })
 }
 onAuthStateChanged(auth, (user) => {
+      if(!user && !alert){
+            popUpGoogle();
+      }
       if (user && signBtn) {    
             const uName = document.querySelector("#name");
             const uMail = document.querySelector("#email");
@@ -79,7 +76,6 @@ onAuthStateChanged(auth, (user) => {
             var hr = (new Date()).getHours(); 
             alert.classList.add("welcomePopUpShowen");
             alert.classList.remove("welcomePopUpHidden");
-            console.log(hr, user.displayName);
             if(hr >= 7 && hr <= 12){
                   welcomeName.innerText = `Доброго ранку, ${user.displayName}`;
             }else if(hr > 12 && hr <= 17){
@@ -105,5 +101,5 @@ onAuthStateChanged(auth, (user) => {
 });      
 
 function goToAdmin(){
-      window.location.href += "School_30_website/00_htmls/admin.html"
+      window.location.href = "https://myduckperson.github.io/School30/School_30_website/00_htmls/admin.html"
 }
